@@ -26,7 +26,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "cd docs && node shins.js --minify --logo ../ssflower.png && mkdir result && mv index.html result && mv pub result"
+        "cd docs && node shins.js --minify --logo ssflower.png && mkdir result && mv ../ssflower.png result mv index.html result && mv pub result"
       ]
     },
     {
