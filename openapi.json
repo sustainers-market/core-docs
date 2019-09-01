@@ -2,11 +2,13 @@
   "openapi": "3.0.0",
   "servers": [
     {
-      "url": "https://{action}.core.sustainers.net",
+      "url": "https://{action}.{domain}.core.sustainers.net",
       "variables": {
         "action": {
-          "enum": ["some", "other"],
-          "default": "some"
+          "enum": ["some", "other"]
+        },
+        "domain": {
+          "enum": ["some", "other"]
         }
       },
       "description": "Development server"
