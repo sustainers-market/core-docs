@@ -25,10 +25,10 @@
     "version": "1.0.0"
   },
   "paths": {
-    "action='some' domain='other'": {
+    "/": {
       "post": {
         "tags": ["Dogs"],
-        "summary": "Add an event to the store",
+        "summary": "create.dog",
         "description": "Add an event to the event store with the specified payload and fact.",
         "security": [],
         "requestBody": {
