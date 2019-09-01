@@ -12,12 +12,6 @@
   },
   "paths": {
     "/yass": {
-      "servers": [
-        {
-          "url": "https://development.gigantic-server.com/v1",
-          "description": "Development server"
-        }
-      ],
       "post": {
         "summary": "Add an event to the store",
         "description": "Add an event to the event store with the specified payload and fact.",
