@@ -16,14 +16,9 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "npm install widdershins"]
-    },
-    {
-      "name": "node:10.16.0",
-      "entrypoint": "bash",
       "args": [
         "-c",
-        "npx widdershins --language_tabs 'node:Node' --summary doc.json -o docs/source/index.html.md"
+        "node widdershins --language_tabs 'node:Node' --summary doc.json -o docs/source/index.html.md"
       ]
     },
     {

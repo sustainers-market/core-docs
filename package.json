@@ -2,15 +2,7 @@
   "name": "@sustainers/core-docs",
   "version": "0.0.0",
   "dependencies": {
-    "express": "^4.17.1",
-    "@sustainers/event-store-add-service": "*",
-    "@sustainers/tokens-from-req": "*",
-    "@sustainers/event-store-middleware": "*"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "precommit": "lint-staged && yarn checkbuild",
-    "checkbuild": "./.checkbuild.sh"
+    "widdershins": "^3.6.7"
   },
   "lint-staged": {
     "*.js": [
