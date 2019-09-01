@@ -13,6 +13,7 @@
   "paths": {
     "/yass": {
       "post": {
+        "tags": ["Dogs"],
         "summary": "Add an event to the store",
         "description": "Add an event to the event store with the specified payload and fact.",
         "security": [],
@@ -168,6 +169,7 @@
     },
     "/more": {
       "post": {
+        "tags": ["Cats"],
         "summary": "Add an event to the store",
         "description": "Add an event to the event store with the specified payload and fact.",
         "security": [],
