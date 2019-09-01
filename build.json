@@ -23,13 +23,13 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "node widdershins --language_tabs 'node:Node' --summary ../doc.json -o source/index.html.md"
+        "npx widdershins --language_tabs 'node:Node' --summary ../doc.json -o source/index.html.md"
       ]
     },
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "node docs/shins.js --minify"]
+      "args": ["-c", "node shins.js --minify"]
     },
     {
       "name": "gcr.io/cloud-builders/gcloud",
