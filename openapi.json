@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "servers": [
     {
-      "url": "https://development.gigantic-server.com/v1",
+      "url": "https://<action>.<domain>.core.sustainers.net",
       "description": "Development server"
     }
   ],
@@ -17,7 +17,13 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/yass": {
+    "/": {
+      "servers": [
+        {
+          "url": "https://hey.domain.core.sustainers.net",
+          "description": "Development server"
+        }
+      ],
       "post": {
         "tags": ["Dogs"],
         "summary": "Add an event to the store",
