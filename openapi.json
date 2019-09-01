@@ -18,13 +18,13 @@
   },
   "paths": {
     "/": {
-      "servers": [
-        {
-          "url": "https://hey.domain.core.sustainers.net",
-          "description": "Development server"
-        }
-      ],
       "post": {
+        "servers": [
+          {
+            "url": "https://hey.domain.core.sustainers.net",
+            "description": "Development server"
+          }
+        ],
         "tags": ["Dogs"],
         "summary": "Add an event to the store",
         "description": "Add an event to the event store with the specified payload and fact.",
