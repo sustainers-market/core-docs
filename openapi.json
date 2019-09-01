@@ -3,14 +3,6 @@
   "servers": [
     {
       "url": "https://{action}.{domain}.core.sustainers.net",
-      "variables": {
-        "action": {
-          "enum": ["some", "other"]
-        },
-        "domain": {
-          "enum": ["some", "other"]
-        }
-      },
       "description": "Development server"
     }
   ],
@@ -28,7 +20,7 @@
     "/": {
       "post": {
         "tags": ["Dogs"],
-        "summary": "create.dog",
+        "summary": "create",
         "description": "Add an event to the event store with the specified payload and fact.",
         "security": [],
         "requestBody": {
