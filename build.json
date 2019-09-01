@@ -1,14 +1,4 @@
 {
-  "substitutions": {
-    "_TITLE": "Add Event",
-    "_SERVICE": "core",
-    "_NETWORK": "sustainers.io",
-    "_GCP_PROJECT": "sustainers",
-    "_GCP_REGION": "us-central1",
-    "_GCP_DNS_ZONE": "io",
-    "_ESP_OPTIONS": "--cors_preset=basic,--cors_allow_methods=POST,--cors_allow_headers=Authorization Content-Type,--cors_allow_credentials",
-    "_MEMORY": "128Mi"
-  },
   "steps": [
     {
       "name": "gcr.io/cloud-builders/git",
@@ -33,13 +23,21 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "node widdershins --language_tabs 'node:Node' --summary doc.json -o docs/source/index.html.md"
+        "node widdershins --language_tabs 'node:Node' --summary ../doc.json -o source/index.html.md"
       ]
     },
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
       "args": ["-c", "node docs/shins.js --minify"]
+    },
+    {
+      "name": "gcr.io/cloud-builders/gcloud",
+      "entrypoint": "bash",
+      "args": [
+        "-c",
+        "gcloud -m -rsync -rcd ./docs gs://docs.core.sustainers.net"
+      ]
     }
   ]
 }

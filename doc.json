@@ -1,6 +1,6 @@
 {
   "info": {
-    "title": "#_TITLE",
+    "title": "Core Docs",
     "version": "1.0.0"
   },
   "paths": {
@@ -162,12 +162,12 @@
           }
         },
         "deprecated": false,
-        "operationId": "#_ADD_NAME"
+        "operationId": "do-something"
       }
     }
   },
   "schemes": ["https"],
   "basePath": "/v1/",
   "swagger": "2.0",
-  "host": "#_HOST"
+  "host": "docs.core.sustainers.net"
 }
