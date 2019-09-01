@@ -24,14 +24,17 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "cd docs && node shins.js --minify"]
+      "args": [
+        "-c",
+        "cd docs && node shins.js --minify && mkdir result && mv index.html result && mv -R pub result"
+      ]
     },
     {
       "name": "gcr.io/cloud-builders/gsutil",
       "entrypoint": "bash",
       "args": [
         "-c",
-        "gsutil -m rsync -r -c -d --include='index.html' --include='pub/*' --exclude='*' docs/ gs://docs.core.sustainers.net"
+        "gsutil -m rsync -r -c -d docs/result gs://docs.core.sustainers.net"
       ]
     }
   ]
