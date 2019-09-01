@@ -18,7 +18,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "npx widdershins --language_tabs 'node:Node' --summary ../doc.json -o source/index.html.md"
+        "npx widdershins --language_tabs 'node:Node' --summary doc.json -o docs/source/index.html.md"
       ]
     },
     {
