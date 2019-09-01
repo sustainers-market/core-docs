@@ -2,7 +2,13 @@
   "openapi": "3.0.0",
   "servers": [
     {
-      "url": "https://<action>.<domain>.core.sustainers.net",
+      "url": "https://{action}.core.sustainers.net",
+      "variables": {
+        "action": {
+          "enum": ["some", "other"],
+          "default": "some"
+        }
+      },
       "description": "Development server"
     }
   ],
@@ -19,12 +25,6 @@
   "paths": {
     "/": {
       "post": {
-        "servers": [
-          {
-            "url": "https://hey.domain.core.sustainers.net",
-            "description": "Development server"
-          }
-        ],
         "tags": ["Dogs"],
         "summary": "Add an event to the store",
         "description": "Add an event to the event store with the specified payload and fact.",
