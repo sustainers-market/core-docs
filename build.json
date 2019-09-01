@@ -24,7 +24,7 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "node docs/shins.js --minify"]
+      "args": ["-c", "cd docs && node shins.js --minify"]
     },
     {
       "name": "gcr.io/cloud-builders/gsutil",
