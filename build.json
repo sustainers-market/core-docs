@@ -29,7 +29,10 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "pwd && ls && cd docs && npx docs/shins.js --minify"]
+      "args": [
+        "-c",
+        "pwd && ls && cd docs && ls && node docs/shins.js --minify"
+      ]
     },
     {
       "name": "gcr.io/cloud-builders/gcloud",
