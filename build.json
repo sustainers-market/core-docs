@@ -6,17 +6,12 @@
       "args": ["-c", "npm install"]
     },
     {
-      "name": "gcr.io/cloud-builders/git",
+      "name": "node:10.16.0",
       "entrypoint": "bash",
       "args": [
         "-c",
-        "git clone https://github.com/Mermade/shins.git docs && cd docs"
+        "git clone https://github.com/Mermade/shins.git docs && cd docs && npm install"
       ]
-    },
-    {
-      "name": "node:10.16.0",
-      "entrypoint": "bash",
-      "args": ["-c", "npm install"]
     },
     {
       "name": "node:10.16.0",
