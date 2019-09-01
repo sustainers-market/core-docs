@@ -28,6 +28,7 @@
     },
     {
       "name": "gcr.io/cloud-builders/gsutil",
+      "entrypoint": "bash",
       "args": [
         "-c",
         "gsutil -m rsync -r -c -d docs gs://docs.core.sustainers.net"
