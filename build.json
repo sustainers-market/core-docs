@@ -1,6 +1,11 @@
 {
   "steps": [
     {
+      "name": "node:10.16.0",
+      "entrypoint": "bash",
+      "args": ["-c", "npm install"]
+    },
+    {
       "name": "gcr.io/cloud-builders/git",
       "entrypoint": "bash",
       "args": [
