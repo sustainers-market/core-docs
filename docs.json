@@ -17,7 +17,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/create": {
+    "//create.auth-token.core.sustainers.net": {
       "post": {
         "tags": ["Dogs"],
         "summary": "create",
