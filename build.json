@@ -10,7 +10,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "git clone git@github.com:sustainers-market/shins.git docs && cd docs && npm install"
+        "git clone https://github.com/sustainers-market/core-docs.git docs && cd docs && npm install"
       ]
     },
     {
