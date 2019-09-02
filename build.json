@@ -8,14 +8,17 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "npx asyncapi-generator docs.yaml html"]
+      "args": [
+        "-c",
+        "npx asyncapi-generator docs.yaml html && rm -rf css && rm -rf js"
+      ]
     },
     {
       "name": "gcr.io/cloud-builders/git",
       "entrypoint": "bash",
       "args": [
         "-c",
-        "git clone https://github.com/sustainers-market/docs-template.git ."
+        "git clone https://github.com/sustainers-market/docs-template.git template && mv template/* ."
       ]
     },
     {
