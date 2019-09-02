@@ -11,7 +11,15 @@
       "args": ["-c", "npx asyncapi-generator docs.yaml html"]
     },
     {
-      "name": "gcr.io/cloud-builders/gsutil",
+      "name": "gcr.io/cloud-builders/git",
+      "entrypoint": "bash",
+      "args": [
+        "-c",
+        "git clone https://github.com/sustainers-market/docs-template.git template && mv template/* ."
+      ]
+    },
+    {
+      "name": "node:10.16.0",
       "entrypoint": "bash",
       "args": [
         "-c",
