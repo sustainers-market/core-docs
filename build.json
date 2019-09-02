@@ -3,14 +3,9 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "npm install"]
-    },
-    {
-      "name": "node:10.16.0",
-      "entrypoint": "bash",
       "args": [
         "-c",
-        "npx asyncapi-generator docs.yaml html && rm -rf css && rm -rf js"
+        "curl -v --data-binary '@./docs.yaml' -H 'Content-Type: text/plain' POST https://playground.asyncapi.io/html/generate > index.html"
       ]
     },
     {
