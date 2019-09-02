@@ -18,7 +18,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "npx widdershins --code false --language_tabs 'javascript:JavaScript' 'ruby:Ruby' 'javascript--nodejs:Node' 'http:HTTP' 'python:Python' --summary docs.json -o docs/source/index.html.md"
+        "npx widdershins --code false --language_tabs 'javascript:JavaScript' 'ruby:Ruby' 'javascript--nodejs:Node' 'http:HTTP' 'python:Python' --summary docs.yaml -o docs/source/index.html.md"
       ]
     },
     {
