@@ -6,8 +6,7 @@ info:
   description: |
     The core functionality of the Sustainer's Market.
   contact:
-    name: sustainers.org
-    url: mailto:dev@sustainers.org
+    name: Sustainers Org
     email: dev@sustainers.org
   license:
     name: Apache 2.0
