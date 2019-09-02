@@ -1,0 +1,7 @@
+{
+  "name": "@sustainers/core-docs",
+  "version": "0.0.0",
+  "dependencies": {
+    "asyncapi-generator": "^0.13.1"
+  }
+}

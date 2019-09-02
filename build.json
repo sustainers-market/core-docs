@@ -3,18 +3,12 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": [
-        "-c",
-        "curl -v --data-binary '@./docs.yaml' -H 'Content-Type: text/plain' POST https://playground.asyncapi.io/html/generate > index.html"
-      ]
+      "args": ["-c", "npm install"]
     },
     {
-      "name": "gcr.io/cloud-builders/git",
+      "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": [
-        "-c",
-        "git clone https://github.com/sustainers-market/docs-template.git template && mv template/* ."
-      ]
+      "args": ["-c", "npx asyncapi-generator docs.yaml html"]
     },
     {
       "name": "node:10.16.0",
