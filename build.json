@@ -15,7 +15,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "git clone https://github.com/sustainers-market/docs-template.git template && mv template/* ."
+        "git clone https://github.com/sustainers-market/docs-template.git ."
       ]
     },
     {
