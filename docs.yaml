@@ -1,26 +1,20 @@
-asyncapi: "1.0.0"
+asyncapi: "2.0.0-rc1"
+id: core.sustainers.net
 info:
   title: Core Service - Sustainer's Market
   version: "1.0.0"
   description: |
-    The Smartylighting Streetlights API allows you
-    to remotely manage the city lights.
+    The core functionality of the Sustainer's Market.
+  contact:
+    name: sustainers.org
+    email: dev@sustainers.org
   license:
     name: Apache 2.0
     url: "https://www.apache.org/licenses/LICENSE-2.0"
-baseTopic: smartylighting.streetlights.1.0
-
 servers:
-  - url: api.streetlights.smartylighting.com:{port}
-    scheme: mqtt
-    description: Test broker
-    variables:
-      port:
-        description: Secure connection (TLS) is available through port 8883.
-        default: "1883"
-        enum:
-          - "1883"
-          - "8883"
+  - url: core.sustainers.net
+    description: Production server
+    protocol: https
 
 topics:
   event.{streetlightId}.lighting.measured:
