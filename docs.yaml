@@ -15,6 +15,7 @@ servers:
   - url: core.sustainers.net
     description: Production server
     protocol: https
+    protocolVersion: 2.0
 
 topics:
   event.{streetlightId}.lighting.measured:
