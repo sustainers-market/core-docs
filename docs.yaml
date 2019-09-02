@@ -1,41 +1,196 @@
 asyncapi: "2.0.0-rc1"
-id: core.sustainers.net
+id: "core:sustainers:net"
 info:
-  title: Core Service - Sustainer's Market
+  title: Core | Sustainer's Market
   version: "1.0.0"
   description: |
-    The core functionality of the Sustainer's Market.
-  contact:
-    name: Sustainers Org
-    email: dev@sustainers.org
+    The core services for the Sustainer's Market.
+
+    ### Check out its awesome features:
+
+    * Turn a specific streetlight on/off 🌃
+    * Dim a specific streetlight 😎
+    * Receive real-time information about environmental lighting conditions 📈
   license:
     name: Apache 2.0
-    url: "https://www.apache.org/licenses/LICENSE-2.0"
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
 servers:
-  - url: core.sustainers.net
-    description: Production server
+  - url: core.sustainers.market
     protocol: https
-    protocolVersion: 2.0
+    description: Production server
+    security:
+      - apiKey: []
+      - supportedOauthFlows:
+          - streetlights:on
+          - streetlights:off
+          - streetlights:dim
+
 defaultContentType: application/json
+
 channels:
-  - create.account:
-    operationId: create.account
-    summary: A summary
-    description: A description
-    tags:
-      - name: account
-    message:
-      headers:
-        applicationInstanceId:
-          description: Some description
-          type: string
+  create.auth-token:
+    subscribe:
+      operationId: create.auth-token
+      summary: Create auth token.
+      description: The tossspic on which measured values may be produced and consumed.
+      tags:
+        - name: auth-token
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "did-create.auth-token"
+      message:
+        $ref: "#/components/messages/lightMeasured"
+
+  edit.auth-token:
+    parameters:
+      - $ref: "#/components/parameters/streetlightId"
+    publish:
+      operationId: edit.auth-token
+      tags:
+        - name: auth-token
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "turn-on"
+      message:
+        $ref: "#/components/messages/turnOnOff"
+
+  some-other.auth-token:
+    parameters:
+      - $ref: "#/components/parameters/streetlightId"
+    publish:
+      operationId: some-other.auth-token
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "turn-off"
+      message:
+        $ref: "#/components/messages/turnOnOff"
+
+  eat.auth-token:
+    parameters:
+      - $ref: "#/components/parameters/streetlightId"
+    publish:
+      operationId: eat.auth-token
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "dim"
+      message:
+        $ref: "#/components/messages/dimLight"
+
+components:
+  messages:
+    lightMeasured:
+      name: lightMeasured
+      title: Light measured
+      summary: Inform about environmental lighting conditions for a particular streetlight.
+      contentType: application/json
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "message-light-measured"
       payload:
-        type: object
-        properties:
-          user:
-            description: Some description
-            type: string
-correlationIds:
-  default:
-    description: Default Correlation ID
-    location: $message.header#/traceId
+        $ref: "#/components/schemas/lightMeasuredPayload"
+    turnOnOff:
+      name: turnOnOff
+      title: Turn on/off
+      summary: Command a particular streetlight to turn the lights on or off.
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "message-turn-on-off"
+      payload:
+        $ref: "#/components/schemas/turnOnOffPayload"
+    dimLight:
+      name: dimLight
+      title: Dim light
+      summary: Command a particular streetlight to dim the lights.
+      traits:
+        - - $ref: "#/components/traits/docs"
+          - headerId: "message-dim-light"
+      payload:
+        $ref: "#/components/schemas/dimLightPayload"
+
+  schemas:
+    lightMeasuredPayload:
+      type: object
+      properties:
+        lumens:
+          type: integer
+          minimum: 0
+          description: Light intensity measured in lumens.
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    turnOnOffPayload:
+      type: object
+      properties:
+        command:
+          type: string
+          enum:
+            - on
+            - off
+          description: Whether to turn on or off the light.
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    dimLightPayload:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          description: Percentage to which the light should be dimmed to.
+          minimum: 0
+          maximum: 100
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    sentAt:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
+
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: user
+      description: Provide your API key as the user and leave the password empty.
+    supportedOauthFlows:
+      type: oauth2
+      description: Flows to support OAuth 2.0
+      flows:
+        implicit:
+          authorizationUrl: "https://authserver.example/auth"
+          scopes:
+            "streetlights:on": Ability to switch lights on
+            "streetlights:off": Ability to switch lights off
+            "streetlights:dim": Ability to dim the lights
+        password:
+          tokenUrl: "https://authserver.example/token"
+          scopes:
+            "streetlights:on": Ability to switch lights on
+            "streetlights:off": Ability to switch lights off
+            "streetlights:dim": Ability to dim the lights
+        clientCredentials:
+          tokenUrl: "https://authserver.example/token"
+          scopes:
+            "streetlights:on": Ability to switch lights on
+            "streetlights:off": Ability to switch lights off
+            "streetlights:dim": Ability to dim the lights
+        authorizationCode:
+          authorizationUrl: "https://authserver.example/auth"
+          tokenUrl: "https://authserver.example/token"
+          refreshUrl: "https://authserver.example/refresh"
+          scopes:
+            "streetlights:on": Ability to switch lights on
+            "streetlights:off": Ability to switch lights off
+            "streetlights:dim": Ability to dim the lights
+    openIdConnectWellKnown:
+      type: openIdConnect
+      openIdConnectUrl: "https://authserver.example/.well-known"
+
+  parameters:
+    streetlightId:
+      name: streetlightId
+      description: The ID of the streetlight.
+      schema:
+        type: string
+
+  traits:
+    docs:
+      externalDocs:
+        url: https://company.com/docs#

@@ -3,16 +3,5 @@
   "version": "0.0.0",
   "dependencies": {
     "widdershins": "^3.6.7"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier-eslint --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier-eslint --write",
-      "git add"
-    ]
   }
 }
