@@ -10,7 +10,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "git clone https://github.com/Mermade/shins.git docs && cd docs && npm install"
+        "git clone git@github.com:sustainers-market/shins.git docs && cd docs && npm install"
       ]
     },
     {
@@ -18,7 +18,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "npx widdershins --language_tabs 'javascript:JavaScript' 'ruby:Ruby' 'javascript--nodejs:Node' 'http:HTTP' 'python:Python' --summary docs.json -o docs/source/index.html.md"
+        "npx widdershins --code false --language_tabs 'javascript:JavaScript' 'ruby:Ruby' 'javascript--nodejs:Node' 'http:HTTP' 'python:Python' --summary docs.json -o docs/source/index.html.md"
       ]
     },
     {
