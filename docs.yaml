@@ -16,30 +16,26 @@ servers:
     description: Production server
     protocol: https
     protocolVersion: 2.0
-
-topics:
-  event.{streetlightId}.lighting.measured:
-    publish:
-      $ref: "#/components/messages/lightMeasured"
-
-components:
-  messages:
-    lightMeasured:
-      summary: Inform about environmental lighting conditions for a particular streetlight.
+defaultContentType: application/json
+channels:
+  - create.account:
+    operationId: create.account
+    summary: A summary
+    description: A description
+    tags:
+      - name: account
+    message:
+      headers:
+        applicationInstanceId:
+          description: Some description
+          type: string
       payload:
-        $ref: "#/components/schemas/lightMeasuredPayload"
-
-  schemas:
-    lightMeasuredPayload:
-      type: object
-      properties:
-        lumens:
-          type: integer
-          minimum: 0
-          description: Light intensity measured in lumens.
-        sentAt:
-          $ref: "#/components/schemas/sentAt"
-    sentAt:
-      type: string
-      format: date-time
-      description: Date and time when the message was sent.
+        type: object
+        properties:
+          user:
+            description: Some description
+            type: string
+correlationIds:
+  default:
+    description: Default Correlation ID
+    location: $message.header#/traceId
