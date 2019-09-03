@@ -26,7 +26,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "gsutil -m rsync -r -c -d site gs://core.sustainers.market/docs"
+        "gsutil -m rsync -r -c -d site gs://docs.core.staging.sustainers.market"
       ]
     }
   ]
