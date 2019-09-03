@@ -27,6 +27,11 @@ servers:
           - streetlights:dim
 
 defaultContentType: application/json
+
+tags:
+  - name: auth-token
+  - name: account
+
 channels:
   create.auth-token:
     subscribe:
@@ -35,44 +40,33 @@ channels:
       description: The tossspic on which measured values may be produced and consumed.
       tags:
         - name: auth-token
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "did-create.auth-token"
       message:
         $ref: "#/components/messages/lightMeasured"
 
   edit.auth-token:
-    parameters:
-      - $ref: "#/components/parameters/streetlightId"
     publish:
       operationId: edit.auth-token
+      summary: yes
       tags:
         - name: account
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "turn-on"
       message:
         $ref: "#/components/messages/turnOnOff"
 
   some-other.auth-token:
-    parameters:
-      - $ref: "#/components/parameters/streetlightId"
     publish:
       operationId: some-other.auth-token
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "turn-off"
+      summary: yes
+      tags:
+        - name: account
       message:
         $ref: "#/components/messages/turnOnOff"
 
   eat.auth-token:
-    parameters:
-      - $ref: "#/components/parameters/streetlightId"
     publish:
+      summary: yes
       operationId: eat.auth-token
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "dim"
+      tags:
+        - name: account
       message:
         $ref: "#/components/messages/dimLight"
 
