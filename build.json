@@ -8,7 +8,10 @@
     {
       "name": "node:10.16.0",
       "entrypoint": "bash",
-      "args": ["-c", "npx asyncapi-generator docs.yaml html"]
+      "args": [
+        "-c",
+        "npx asyncapi-generator --param templateParams={sidebarOrganization:'byTags'} docs.yaml html"
+      ]
     },
     {
       "name": "node:10.16.0",
