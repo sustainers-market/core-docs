@@ -27,11 +27,6 @@ servers:
           - streetlights:dim
 
 defaultContentType: application/json
-tags:
-  - name: auth-token
-    description: yeehaw
-  - name: account
-    description: yeehaw
 channels:
   create.auth-token:
     subscribe:

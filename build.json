@@ -10,7 +10,7 @@
       "entrypoint": "bash",
       "args": [
         "-c",
-        "npx asyncapi-generator --param sidebarOrganization=byTags docs.yaml html"
+        "npx asyncapi-generator --param sidebarOrganization='byTags' docs.yaml html"
       ]
     },
     {
