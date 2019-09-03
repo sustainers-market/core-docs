@@ -30,6 +30,8 @@ defaultContentType: application/json
 tags:
   - name: auth-token
     description: yeehaw
+  - name: account
+    description: yeehaw
 channels:
   create.auth-token:
     subscribe:
@@ -50,7 +52,7 @@ channels:
     publish:
       operationId: edit.auth-token
       tags:
-        - name: auth-token
+        - name: account
       traits:
         - - $ref: "#/components/traits/docs"
           - headerId: "turn-on"
