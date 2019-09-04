@@ -6,7 +6,12 @@ info:
   description: |
     The core services for the Sustainer's Market.
 
-    * Turn a specific streetlight `on/off` 🌃
+    # Check out its awesome features:
+    ## Check out its awesome features:
+    ### Check out its awesome features:
+    #### Check out its awesome features:
+
+    * Turn a _specific_ ~streetlight~ `on/off` 🌃
     * Dim a specific streetlight 😎
     * Receive real-time information about environmental lighting conditions 📈
   license:
@@ -146,12 +151,6 @@ components:
       flows:
         implicit:
           authorizationUrl: "https://authserver.example/auth"
-          scopes:
-            "streetlights:on": Ability to switch lights on
-            "streetlights:off": Ability to switch lights off
-            "streetlights:dim": Ability to dim the lights
-        password:
-          tokenUrl: "https://authserver.example/token"
           scopes:
             "streetlights:on": Ability to switch lights on
             "streetlights:off": Ability to switch lights off
