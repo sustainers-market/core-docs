@@ -8,9 +8,12 @@ info:
 
     There are 4 domains in this service 
 
-    `issuer`- An `issuer` has roles, and therefore can acquire `auth-token`'s' to issue any number of commands on the Market.
+    `issuer` - An `issuer` has roles, and therefore can acquire `auth-token`'s' to issue any number of commands on the Market.
+
     `auth-token` - An `auth-token` is used as authorization for commands on an `issuer`'s behalf, confined to specified scopes.'
+
     `account` - An `account` has name, phone number, and payment information stored so that services can request access to them by sending a `challenge`.
+
     `challenge` - A `challenge` is used by a service to request an account holder's permissions.
 
     * auth-token
