@@ -6,9 +6,7 @@ info:
   description: |
     The core services for the Sustainer's Market.
 
-    ### Check out its awesome features:
-
-    * Turn a specific streetlight on/off 🌃
+    * Turn a specific streetlight `on/off` 🌃
     * Dim a specific streetlight 😎
     * Receive real-time information about environmental lighting conditions 📈
   license:
