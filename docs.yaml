@@ -10,8 +10,8 @@ info:
 
     | Domain        | Summary       | Cool  |
     | ------------- |-------------| -----:|
-    | `issuer`        | An `issuer` describes an entity that has roles, and therefore can acquire `auth-token`'s' to issue commands to any number of servers on the Sustainer's Market.  |    $1 |
-    | `auth-token`    | An `auth-token` describes an entity that can be scoped to sign commands on an `issuer`'s behalf.'  | $1600 |
+    | `issuer`  &nbsp;  &nbsp;       | An `issuer` describes an entity that has roles, and therefore can acquire `auth-token`'s' to issue commands to any number of servers on the Sustainer's Market.  |    $1 |
+    | `auth-token`  &nbsp;  &nbsp;   | An `auth-token` describes an entity that can be scoped to sign commands on an `issuer`'s behalf.'  | $1600 |
     | `account`       | An `account` describes an entity that make's sure any authenticated person can access all of their information on the Market.  |    $1 |
     | `challenge`     | A `challenge` describes an entity that can grant special permissions to a service.     |    $1 |
 
