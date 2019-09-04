@@ -143,8 +143,8 @@ components:
   securitySchemes:
     apiKey:
       type: apiKey
-      in: user
-      description: Provide your API key as the user and leave the password empty.
+      in: password
+      description: Provide your API key as the password field of the request's [Basic Authorization](https://en.wikipedia.org/wiki/Basic_access_authentication) header.
     supportedOauthFlows:
       type: oauth2
       description: Flows to support OAuth 2.0
