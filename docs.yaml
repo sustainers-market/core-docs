@@ -8,12 +8,10 @@ info:
 
     There are 4 domains in this service 
 
-    | Domain        | Summary       |
-    | ------------- |-------------|
-    | `issuer`  &nbsp;  &nbsp;       | The `issuer` domain describes entities that have roles, and therefore can acquire `auth-token`'s' to issue commands to any number of servers on the Market.  |
-    | `auth-token`  &nbsp;  &nbsp;   | The `auth-token` domain describes entities that can be scoped to authenticate commands on an `issuer`'s behalf.'  |
-    | `account`   &nbsp;  &nbsp;     | The `account` domain describes entities that have name, email, and payment information that services can request access to by issuing a `challenge`.  |
-    | `challenge`   &nbsp;  &nbsp;   | The `challenge` domain describes entity that can grants access to a server.     |
+    `issuer`- An `issuer` has roles, and therefore can acquire `auth-token`'s' to issue any number of commands on the Market.
+    `auth-token` - An `auth-token` is used as authorization for commands on an `issuer`'s behalf, confined to specified scopes.'
+    `account` - An `account` has name, phone number, and payment information stored so that services can request access to them by sending a `challenge`.
+    `challenge` - A `challenge` is used by a service to request an account holder's permissions.
 
     * auth-token
     # Check out its awesome features:
