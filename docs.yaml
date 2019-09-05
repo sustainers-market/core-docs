@@ -12,9 +12,9 @@ tags:
   - name: auth-token
 
 channels:
-  create.auth-token:
+  create.auth-token.core:
     publish:
-      operationId: create.auth-token.core.sustainers.net
+      operationId: create
       summary: Create auth token.
       description: This command creates an auth token.
       tags:
