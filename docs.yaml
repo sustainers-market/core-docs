@@ -42,7 +42,7 @@ tags:
 
 channels:
   create.auth-token:
-    issue:
+    publish:
       operationId: create.auth-token.core.sustainers.net
       summary: Create auth token.
       description: This command creates an auth token.
