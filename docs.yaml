@@ -68,8 +68,6 @@ components:
   schemas:
     create-auth-token-payload:
       type: object
-      required:
-        - percentage
       properties:
         percentage:
           type: integer
@@ -93,6 +91,8 @@ components:
           enum:
             - on
             - off
+      required:
+        - percentage
     sentAt:
       type: string
       format: date-time
