@@ -34,10 +34,6 @@ servers:
     description: Production server
     security:
       - apiKey: []
-      - supportedOauthFlows:
-          - streetlights:on
-          - streetlights:off
-          - streetlights:dim
 
 defaultContentType: application/json
 
