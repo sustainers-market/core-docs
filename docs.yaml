@@ -21,11 +21,6 @@ channels:
         - name: auth-token
       message:
         $ref: "#/components/messages/create-auth-token"
-      amqp-0-9-1:
-        channelIsQueue: true
-        queue:
-          randomName: true
-          exclusive: true
 
 components:
   messages:
@@ -34,6 +29,10 @@ components:
       title: Create auth token command
       summary: Do something quite good.
       contentType: application/json
+      headers:
+        issuer:
+          type: string
+          description: "The issuer of the command."
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
