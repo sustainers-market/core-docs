@@ -53,7 +53,7 @@ channels:
       tags:
         - name: auth-token
       message:
-        $ref: "#/components/messages/lightMeasured"
+        $ref: "#/components/messages/create-auth-token"
 
 components:
   messages:
