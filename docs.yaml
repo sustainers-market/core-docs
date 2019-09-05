@@ -76,10 +76,6 @@ components:
           maximum: 100
         swag:
           type: object
-          description: Light intensity measured in lumens.
-        another-swag:
-          type: array
-          description: Light intensity measured in lumens.
         lumens:
           type: integer
           minimum: 0
