@@ -77,6 +77,15 @@ components:
         swag:
           type: object
           description: Light intensity measured in lumens.
+          properties:
+            percentage:
+              type: integer
+              description: Percentage to which the light should be dimmed to.
+        another-swag:
+          type: array
+          description: Light intensity measured in lumens.
+          items:
+            type: integer
         lumens:
           type: integer
           minimum: 0
