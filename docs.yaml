@@ -43,99 +43,30 @@ defaultContentType: application/json
 
 tags:
   - name: auth-token
-  - name: account
 
 channels:
   create.auth-token:
-    subscribe:
+    publish:
       operationId: create.auth-token
       summary: Create auth token.
-      description: The tossspic on which measured values may be produced and consumed.
+      description: This command creates an auth token.
       tags:
         - name: auth-token
       message:
         $ref: "#/components/messages/lightMeasured"
 
-  edit.auth-token:
-    publish:
-      operationId: edit.auth-token
-      summary: yes
-      tags:
-        - name: account
-      message:
-        $ref: "#/components/messages/turnOnOff"
-
-  some-other.auth-token:
-    publish:
-      operationId: some-other.auth-token
-      summary: yes
-      tags:
-        - name: account
-      message:
-        $ref: "#/components/messages/turnOnOff"
-
-  eat.auth-token:
-    publish:
-      summary: yes
-      operationId: eat.auth-token
-      tags:
-        - name: account
-      message:
-        $ref: "#/components/messages/dimLight"
-
 components:
   messages:
-    lightMeasured:
-      name: lightMeasured
-      title: Light measured
-      summary: Inform about environmental lighting conditions for a particular streetlight.
+    create-auth-token:
+      name: create-auth-token-command
+      title: Create auth token command
+      summary: Do something quite good.
       contentType: application/json
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "message-light-measured"
       payload:
-        $ref: "#/components/schemas/lightMeasuredPayload"
-    turnOnOff:
-      name: turnOnOff
-      title: Turn on/off
-      summary: Command a particular streetlight to turn the lights on or off.
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "message-turn-on-off"
-      payload:
-        $ref: "#/components/schemas/turnOnOffPayload"
-    dimLight:
-      name: dimLight
-      title: Dim light
-      summary: Command a particular streetlight to dim the lights.
-      traits:
-        - - $ref: "#/components/traits/docs"
-          - headerId: "message-dim-light"
-      payload:
-        $ref: "#/components/schemas/dimLightPayload"
+        $ref: "#/components/schemas/create-auth-token-payload"
 
   schemas:
-    lightMeasuredPayload:
-      type: object
-      properties:
-        lumens:
-          type: integer
-          minimum: 0
-          description: Light intensity measured in lumens.
-        sentAt:
-          $ref: "#/components/schemas/sentAt"
-    turnOnOffPayload:
-      type: object
-      properties:
-        command:
-          type: string
-          enum:
-            - on
-            - off
-          description: Whether to turn on or off the light.
-        sentAt:
-          $ref: "#/components/schemas/sentAt"
-    dimLightPayload:
+    create-auth-token-payload:
       type: object
       properties:
         percentage:
@@ -143,8 +74,17 @@ components:
           description: Percentage to which the light should be dimmed to.
           minimum: 0
           maximum: 100
+        lumens:
+          type: integer
+          minimum: 0
+          description: Light intensity measured in lumens.
         sentAt:
           $ref: "#/components/schemas/sentAt"
+        some:
+          type: string
+          enum:
+            - on
+            - off
     sentAt:
       type: string
       format: date-time
@@ -180,8 +120,3 @@ components:
       description: The ID of the streetlight.
       schema:
         type: string
-
-  traits:
-    docs:
-      externalDocs:
-        url: https://company.com/docs#
