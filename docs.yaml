@@ -77,6 +77,9 @@ components:
         swag:
           type: object
           description: Light intensity measured in lumens.
+          properties:
+            umph:
+              type: integer
         lumens:
           type: integer
           minimum: 0
