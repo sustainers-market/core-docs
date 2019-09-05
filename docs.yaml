@@ -29,10 +29,18 @@ components:
       title: Create auth token command
       summary: Do something quite good.
       contentType: application/json
+      headers:
+        $ref: "#/components/schemas/command-issuer"
+      type: string
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
   schemas:
+    command-issuer:
+      issuer:
+        description: The issuer of the command. This should be formatted like [id]@[service].sustainers.services
+      trace:
+        description: A value passed from the original command issuer to relate subsequent events.
     create-auth-token-payload:
       type: object
       properties:
