@@ -41,9 +41,9 @@ tags:
   - name: auth-token
 
 channels:
-  create.auth-token.core.sustainers.market:
+  create.auth-token:
     issue:
-      operationId: create.auth-token
+      operationId: create.auth-token.core.sustainers.net
       summary: Create auth token.
       description: This command creates an auth token.
       tags:
