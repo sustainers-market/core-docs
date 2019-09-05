@@ -74,6 +74,7 @@ components:
           description: Percentage to which the light should be dimmed to.
           minimum: 0
           maximum: 100
+          required: true
         swag:
           type: object
           description: Light intensity measured in lumens.
