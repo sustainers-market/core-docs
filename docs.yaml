@@ -4,7 +4,7 @@ info:
   title: Core | Sustainer's Market
   version: "1.0.0"
   description: |
-    The Core service provides authentication, accounts, event sourcing, and payments functionality for the (Sustainer's Market)[https://sustainers.market]. 
+    The Core service provides authentication, accounts, event sourcing, and payments functionality for the [Sustainer's Market](https://sustainers.market). 
 
 defaultContentType: application/json
 
