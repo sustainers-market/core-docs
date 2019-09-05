@@ -74,6 +74,22 @@ components:
           description: Percentage to which the light should be dimmed to.
           minimum: 0
           maximum: 100
+        swag:
+          type: object
+          description: Light intensity measured in lumens.
+          properties:
+            percentage:
+              type: integer
+              description: Percentage to which the light should be dimmed to.
+              minimum: 0
+              maximum: 100
+        another-swag:
+          type: array
+          description: Light intensity measured in lumens.
+          items:
+            type: integer
+            minimum: 0
+            maximum: 100
         lumens:
           type: integer
           minimum: 0
@@ -113,10 +129,3 @@ components:
             "streetlights:on": Ability to switch lights on
             "streetlights:off": Ability to switch lights off
             "streetlights:dim": Ability to dim the lights
-
-  parameters:
-    streetlightId:
-      name: streetlightId
-      description: The ID of the streetlight.
-      schema:
-        type: string
