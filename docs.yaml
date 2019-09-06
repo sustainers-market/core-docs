@@ -35,9 +35,11 @@ components:
       tags:
         - name: auth-token
       headers:
-        issuer:
-          type: string
-          description: "The issuer of the command."
+        type: object
+        properties:
+          issuer:
+            type: string
+            description: "The issuer of the command."
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
