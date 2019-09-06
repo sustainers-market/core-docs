@@ -35,9 +35,11 @@ components:
       tags:
         - name: auth-token
       headers:
-        trace:
-          type: string
-          description: "A value passed from the original command issuer to relate subsequent events."
+        type: object
+        properties:
+          trace:
+            type: string
+            description: "A value passed from the original command issuer to relate subsequent events."
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
