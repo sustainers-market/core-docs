@@ -37,7 +37,6 @@ components:
       headers:
         trace:
           type: string
-          required: true
           description: "A value passed from the original command issuer to relate subsequent events."
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
