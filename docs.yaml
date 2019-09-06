@@ -16,7 +16,9 @@ channels:
     publish:
       operationId: create.auth-token.core.sustainers.network
       summary: create
-      description: This command creates an auth token.
+      description: |
+        This **command** creates an 
+        #auth token.
       tags:
         - name: auth-token
       message:
