@@ -18,7 +18,7 @@ channels:
       summary: create
       description: |
         This **command** creates an 
-        #auth token.
+        # auth token.
       tags:
         - name: auth-token
       message:
