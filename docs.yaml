@@ -25,7 +25,6 @@ channels:
 components:
   messages:
     create-auth-token:
-      name: create-auth-token-command
       title: Create auth token command
       summary: Do something quite good.
       description: Seriously, real good.
