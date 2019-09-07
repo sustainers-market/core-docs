@@ -23,15 +23,6 @@ channels:
         - name: auth-token
       message:
         $ref: "#/components/messages/create-auth-token"
-  create.auth-oken:
-    publish:
-      operationId: create.auth-token.core.sustainers.network
-      summary: create
-      description: |
-        This **command** creates an 
-        # auth token.
-      message:
-        $ref: "#/components/messages/create-auth-token"
 
 components:
   messages:
