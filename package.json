@@ -4,5 +4,8 @@
   "dependencies": {
     "asyncapi-generator": "git+https://github.com/sustainers-market/generator.git",
     "mkdirp": "*"
+  },
+  "scripts": {
+    "generate": "./generate.sh"
   }
 }
