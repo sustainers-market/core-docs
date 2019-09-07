@@ -85,3 +85,5 @@ components:
           trace:
             type: string
             description: "A value passed from the original command issuer to relate subsequent events."
+        required:
+          - trace
