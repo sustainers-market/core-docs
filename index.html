@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Core | Sustainer&#39;s Market 1.0.0 documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/atom-one-dark.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="relative md:flex lg:flex xl:flex">
+    
+
+<input id="burger-menu" type="checkbox" />
+<label for="burger-menu" class="shadow">
+  <div class="wrapper">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</label>
+<div class="sidebar-panel fixed pin-t pin-l pin-b w-64 bg-grey-lighter font-sans pt-8 pr-4 pb-4 pl-4">
+  <div class="sidebar-panel__content">
+    
+    <h1 class="text-2xl font-thin">Core | Sustainer&#39;s Market 1.0.0</h1>
+    
+    <ul class="text-sm mt-10 list-reset mt-2">
+      <li class="mb-3">
+        <a class="js-menu-item text-grey-darkest no-underline" href="#introduction">Introduction</a>
+      </li>
+      
+      <li class="mb-3">
+        <a class="js-menu-item text-grey-darkest no-underline" href="#servers">Servers</a>
+      </li>
+      
+    </ul>
+    
+    <h2 class="text-xs uppercase text-grey mt-10 mb-4 font-thin">Operations</h2>
+    <ul class="text-sm list-reset mt-2">
+      
+      <!-- With tags in sidebar -->
+      
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm"
+              style="word-break: break-word;text-transform: capitalize;">auth-token</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+              <a class="js-menu-item flex break-words no-underline text-grey-darkest mt-8 sm:mt-8 md:mt-3"
+                href="#operation-publish-create.auth-token">
+                <span class="bg-blue-dark font-bold h-6 no-underline text-white uppercase p-1 mr-2 rounded"
+                  style="height: 21px;font-size: 11px;" title="Publish">Pub</span>
+                
+                <span style="padding-top: 2px;">
+                  create
+                </span>
+                
+              </a>
+            
+
+            
+          
+        </div>
+      </div>
+      
+      
+      <!-- Untagged operations -->
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm" style="word-break: break-word;text-transform: capitalize;">Untagged</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+          
+          
+          
+        </div>
+      </div>
+
+      
+    
+  </div>
+</div>
+
+    <div class="content-panel flex-1 leading-loose z-10">
+      <div class="center-block p-8">
+  <a name="introduction"></a>
+  <h1>Core | Sustainer&#39;s Market 1.0.0</h1>
+  <div class="leading-normal mb-4">
+    
+    
+  </div>
+
+  <div class="markdown">
+    <p>The Core service provides authentication, accounts, event sourcing, and payments functionality for the <a href="https://sustainers.market">Sustainer's Market</a>.</p>
+
+  </div>
+</div>
+
+
+
+
+
+<a name="operations"></a>
+<h2 class="mb-4 ml-8">Operations</h2>
+
+
+  <div class="responsive-container">
+    
+      
+
+<a name="operation-publish-create.auth-token"></a>
+<div class="center-block p-8">
+  <div class="operation pt-8 pb-8">
+    <h3 class="font-mono text-base">
+      
+      <span class="font-mono border border-blue text-blue uppercase p-1 rounded" title="Publish">Pub</span>
+      
+      
+      
+<span class="string-chunk" >create</span><span class="string-chunk" >.auth-token</span>
+
+    </h3>
+
+    <div class="mt-4 mb-4 markdown"></div>
+
+    <p class="text-grey text-sm">create</p>
+    <div class="mt-4 mb-4 markdown"><p>This <strong>command</strong> creates an</p>
+<h1>auth token.</h1>
+</div>
+
+    
+      <p>Accepts the following message:</p>
+      
+
+<div class="bg-grey-lighter rounded p-4 mt-2">
+  <div class="text-sm text-grey-darker mb-2">
+    
+    
+      Create auth token command
+      
+        <span class="border text-orange rounded text-xs ml-3 py-0 px-2">/</span>
+      
+    
+  </div>
+  <p class="text-grey-dark text-sm">Do something quite good.</p>
+  <div class="mt-4 mb-4 markdown"><p>Seriously, real good.</p>
+</div>
+  
+<div>
+  
+
+<div class="bg-grey-lighter  rounded">
+  <div class="is-open">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">Payload</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lightest py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">percentage</span>
+        
+        
+          <div class="text-red-dark text-xs">required</div>
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At least 0">>= 0</span>
+            
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At most 100"><= 100</span>
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Percentage to which the light should be dimmed to.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">swag</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Light intensity measured in lumens.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lighter py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lighter pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">umph</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey-darker">Additional properties are allowed.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">lumens</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At least 0">>= 0</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Light intensity measured in lumens.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">sentAt</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+              <span class="bg-yellow-dark font-bold no-underline text-black rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;">date-time</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Date and time when the message was sent.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">some</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+          <div class="text-xs">
+            Enum:
+            
+              <span class="border text-orange rounded ml-1 py-0 px-2">&quot;on&quot;</span>
+            
+              <span class="border text-orange rounded ml-1 py-0 px-2">&quot;off&quot;</span>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey-darker">Additional properties are allowed.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+    <div class="mt-4">
+      
+<div>
+  
+
+<div class="bg-grey-lighter  rounded">
+  <div class="is-open">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">Headers</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lightest py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+        <span class="text-sm " style="word-break: break-word;">trace</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>A value passed from the original command issuer to relate subsequent events.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey-darker">Additional properties are allowed.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+    </div>
+  
+</div>
+
+
+    
+
+    
+<div class="mt-4">
+  
+    <span class="bg-grey-dark font-normal text-sm no-underline text-white rounded lowercase mr-2 px-2 py-1" title="">auth-token</span>
+  
+</div>
+
+
+  </div>
+</div>
+
+<div class="right-block p-8">
+  <h4 class="text-lg text-white mb-4">Examples</h4>
+
+  
+    
+
+<form>
+  <input type="radio" checked id="example-payload--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIGF1dGggdG9rZW4gY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInRhZ3MiOlt7Im5hbWUiOiJhdXRoLXRva2VuIn1dLCJwYXlsb2FkIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InBlcmNlbnRhZ2UiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6IlBlcmNlbnRhZ2UgdG8gd2hpY2ggdGhlIGxpZ2h0IHNob3VsZCBiZSBkaW1tZWQgdG8uIiwibWluaW11bSI6MCwibWF4aW11bSI6MTAwfSwic3dhZyI6eyJ0eXBlIjoib2JqZWN0IiwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiIsInByb3BlcnRpZXMiOnsidW1waCI6eyJ0eXBlIjoiaW50ZWdlciJ9fX0sImx1bWVucyI6eyJ0eXBlIjoiaW50ZWdlciIsIm1pbmltdW0iOjAsImRlc2NyaXB0aW9uIjoiTGlnaHQgaW50ZW5zaXR5IG1lYXN1cmVkIGluIGx1bWVucy4ifSwic2VudEF0Ijp7InR5cGUiOiJzdHJpbmciLCJmb3JtYXQiOiJkYXRlLXRpbWUiLCJkZXNjcmlwdGlvbiI6IkRhdGUgYW5kIHRpbWUgd2hlbiB0aGUgbWVzc2FnZSB3YXMgc2VudC4ifSwic29tZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJvbiIsIm9mZiJdfX0sInJlcXVpcmVkIjpbInBlcmNlbnRhZ2UiXX0sImhlYWRlcnMiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidHJhY2UiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQSB2YWx1ZSBwYXNzZWQgZnJvbSB0aGUgb3JpZ2luYWwgY29tbWFuZCBpc3N1ZXIgdG8gcmVsYXRlIHN1YnNlcXVlbnQgZXZlbnRzLiJ9fX0sIngtcGFyc2VyLW9yaWdpbmFsLXRyYWl0cyI6W3siaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19fX1dLCJzY2hlbWFGb3JtYXQiOiJhcHBsaWNhdGlvbi92bmQuYWFpLmFzeW5jYXBpO3ZlcnNpb249Mi4wLjAifQ==" name="tab" class="examples-payload-tab hidden" />
+  <label for="example-payload--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIGF1dGggdG9rZW4gY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInRhZ3MiOlt7Im5hbWUiOiJhdXRoLXRva2VuIn1dLCJwYXlsb2FkIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InBlcmNlbnRhZ2UiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6IlBlcmNlbnRhZ2UgdG8gd2hpY2ggdGhlIGxpZ2h0IHNob3VsZCBiZSBkaW1tZWQgdG8uIiwibWluaW11bSI6MCwibWF4aW11bSI6MTAwfSwic3dhZyI6eyJ0eXBlIjoib2JqZWN0IiwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiIsInByb3BlcnRpZXMiOnsidW1waCI6eyJ0eXBlIjoiaW50ZWdlciJ9fX0sImx1bWVucyI6eyJ0eXBlIjoiaW50ZWdlciIsIm1pbmltdW0iOjAsImRlc2NyaXB0aW9uIjoiTGlnaHQgaW50ZW5zaXR5IG1lYXN1cmVkIGluIGx1bWVucy4ifSwic2VudEF0Ijp7InR5cGUiOiJzdHJpbmciLCJmb3JtYXQiOiJkYXRlLXRpbWUiLCJkZXNjcmlwdGlvbiI6IkRhdGUgYW5kIHRpbWUgd2hlbiB0aGUgbWVzc2FnZSB3YXMgc2VudC4ifSwic29tZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJvbiIsIm9mZiJdfX0sInJlcXVpcmVkIjpbInBlcmNlbnRhZ2UiXX0sImhlYWRlcnMiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidHJhY2UiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQSB2YWx1ZSBwYXNzZWQgZnJvbSB0aGUgb3JpZ2luYWwgY29tbWFuZCBpc3N1ZXIgdG8gcmVsYXRlIHN1YnNlcXVlbnQgZXZlbnRzLiJ9fX0sIngtcGFyc2VyLW9yaWdpbmFsLXRyYWl0cyI6W3siaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19fX1dLCJzY2hlbWFGb3JtYXQiOiJhcHBsaWNhdGlvbi92bmQuYWFpLmFzeW5jYXBpO3ZlcnNpb249Mi4wLjAifQ==" class="py-1 px-2 mr-2 mb-4 text-grey-lightest text-sm border rounded focus:outline-none cursor-pointer text-grey-lightest" >Payload</label>
+
+  <input type="radio" id="example-headers--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIGF1dGggdG9rZW4gY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInRhZ3MiOlt7Im5hbWUiOiJhdXRoLXRva2VuIn1dLCJwYXlsb2FkIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InBlcmNlbnRhZ2UiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6IlBlcmNlbnRhZ2UgdG8gd2hpY2ggdGhlIGxpZ2h0IHNob3VsZCBiZSBkaW1tZWQgdG8uIiwibWluaW11bSI6MCwibWF4aW11bSI6MTAwfSwic3dhZyI6eyJ0eXBlIjoib2JqZWN0IiwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiIsInByb3BlcnRpZXMiOnsidW1waCI6eyJ0eXBlIjoiaW50ZWdlciJ9fX0sImx1bWVucyI6eyJ0eXBlIjoiaW50ZWdlciIsIm1pbmltdW0iOjAsImRlc2NyaXB0aW9uIjoiTGlnaHQgaW50ZW5zaXR5IG1lYXN1cmVkIGluIGx1bWVucy4ifSwic2VudEF0Ijp7InR5cGUiOiJzdHJpbmciLCJmb3JtYXQiOiJkYXRlLXRpbWUiLCJkZXNjcmlwdGlvbiI6IkRhdGUgYW5kIHRpbWUgd2hlbiB0aGUgbWVzc2FnZSB3YXMgc2VudC4ifSwic29tZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJvbiIsIm9mZiJdfX0sInJlcXVpcmVkIjpbInBlcmNlbnRhZ2UiXX0sImhlYWRlcnMiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidHJhY2UiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQSB2YWx1ZSBwYXNzZWQgZnJvbSB0aGUgb3JpZ2luYWwgY29tbWFuZCBpc3N1ZXIgdG8gcmVsYXRlIHN1YnNlcXVlbnQgZXZlbnRzLiJ9fX0sIngtcGFyc2VyLW9yaWdpbmFsLXRyYWl0cyI6W3siaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19fX1dLCJzY2hlbWFGb3JtYXQiOiJhcHBsaWNhdGlvbi92bmQuYWFpLmFzeW5jYXBpO3ZlcnNpb249Mi4wLjAifQ==" name="tab" class="examples-headers-tab hidden"  />
+  <label for="example-headers--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIGF1dGggdG9rZW4gY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInRhZ3MiOlt7Im5hbWUiOiJhdXRoLXRva2VuIn1dLCJwYXlsb2FkIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InBlcmNlbnRhZ2UiOnsidHlwZSI6ImludGVnZXIiLCJkZXNjcmlwdGlvbiI6IlBlcmNlbnRhZ2UgdG8gd2hpY2ggdGhlIGxpZ2h0IHNob3VsZCBiZSBkaW1tZWQgdG8uIiwibWluaW11bSI6MCwibWF4aW11bSI6MTAwfSwic3dhZyI6eyJ0eXBlIjoib2JqZWN0IiwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiIsInByb3BlcnRpZXMiOnsidW1waCI6eyJ0eXBlIjoiaW50ZWdlciJ9fX0sImx1bWVucyI6eyJ0eXBlIjoiaW50ZWdlciIsIm1pbmltdW0iOjAsImRlc2NyaXB0aW9uIjoiTGlnaHQgaW50ZW5zaXR5IG1lYXN1cmVkIGluIGx1bWVucy4ifSwic2VudEF0Ijp7InR5cGUiOiJzdHJpbmciLCJmb3JtYXQiOiJkYXRlLXRpbWUiLCJkZXNjcmlwdGlvbiI6IkRhdGUgYW5kIHRpbWUgd2hlbiB0aGUgbWVzc2FnZSB3YXMgc2VudC4ifSwic29tZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJvbiIsIm9mZiJdfX0sInJlcXVpcmVkIjpbInBlcmNlbnRhZ2UiXX0sImhlYWRlcnMiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidHJhY2UiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiQSB2YWx1ZSBwYXNzZWQgZnJvbSB0aGUgb3JpZ2luYWwgY29tbWFuZCBpc3N1ZXIgdG8gcmVsYXRlIHN1YnNlcXVlbnQgZXZlbnRzLiJ9fX0sIngtcGFyc2VyLW9yaWdpbmFsLXRyYWl0cyI6W3siaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19fX1dLCJzY2hlbWFGb3JtYXQiOiJhcHBsaWNhdGlvbi92bmQuYWFpLmFzeW5jYXBpO3ZlcnNpb249Mi4wLjAifQ=="
+      class="py-1 px-2 mr-2 mb-4 text-sm border rounded focus:outline-none cursor-pointer text-grey-lightest" >Headers</label>
+
+  <div class="payload-examples mt-4">
+    
+    <pre class="hljs mb-4 border border-grey-darkest rounded"><code>{
+  "percentage": 0,
+  "swag": {
+    "umph": 0
+  },
+  "lumens": 0,
+  "sentAt": "2019-09-07T00:39:59Z",
+  "some": "on"
+}</code></pre>
+    <h6 class="text-xs font-bold text-grey-darker italic">This example has been generated automatically.</h6>
+    
+  </div>
+
+  <div class="headers-examples mt-4">
+    
+    <pre class="hljs mb-4 border border-grey-darkest rounded"><code>{
+  "trace": "string"
+}</code></pre>
+    <h6 class="text-xs font-bold text-grey-darker italic">This example has been generated automatically.</h6>
+    
+  </div>
+</form>
+
+
+  
+</div>
+
+
+
+    
+    
+  </div>
+
+
+
+
+    </div>
+    <div class="examples-panel absolute pin-t pin-r pin-b"></div>
+  </div>
+  <script src="js/highlight.min.js" type="application/javascript"></script>
+  <script src="js/main.js" type="application/javascript"></script>
+</body>
+</html>
