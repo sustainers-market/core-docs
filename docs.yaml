@@ -1,4 +1,4 @@
-asyncapi: "2.0.0-rc1"
+asyncapi: "2.0.0-rc2"
 id: "core:sustainers:net"
 info:
   title: Core | Sustainer's Market
@@ -34,12 +34,8 @@ components:
       contentType: application/json
       tags:
         - name: auth-token
-      headers:
-        type: object
-        properties:
-          trace:
-            type: string
-            description: "A value passed from the original command issuer to relate subsequent events."
+      traits:
+        - $ref: "#/components/traits/command-headers"
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
@@ -82,3 +78,12 @@ components:
       type: apiKey
       in: user
       description: Your apiKey is your service's account id.
+
+  traits:
+    command-headers:
+      headers:
+        type: object
+        properties:
+          trace:
+            type: string
+            description: "A value passed from the original command issuer to relate subsequent events."
