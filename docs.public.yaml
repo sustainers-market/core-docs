@@ -1,0 +1,127 @@
+asyncapi: 2.0.0-rc2
+
+info:
+  title: Core | Sustainer's Market Network
+  version: "1.0.0"
+  description: |
+    The Core service provides authentication, accounts, event sourcing, and payments functionality for the [Sustainer's Market](https://sustainers.market).
+
+servers:
+  prod:
+    url: core.sustainers.network
+    protocol: http
+  sandbox:
+    url: core.sandbox.sustainers.network
+    protocol: http
+
+defaultContentType: application/json
+
+tags:
+  - name: auth-token
+
+channels:
+  /create.auth-token:
+    publish:
+      operationId: create.auth-token.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+        # auth token.
+      tags:
+        - name: auth-token
+      message:
+        $ref: "#/components/messages/domain.auth-token.create.req"
+
+components:
+  messages:
+    default.res:
+      payload:
+        type: object
+        properties:
+          root:
+            type: string
+
+    domain.auth-token.create.req:
+      name: /
+      title: Create auth token command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.auth-token.create.payload"
+
+    error.unexpected:
+      payload:
+        type: object
+        properties:
+          status:
+            type: string
+            const: Unexpected error
+
+  operationBindings:
+    rest:
+      http:
+        POST:
+          requestBody: "$message#"
+          responses:
+            "200":
+              $ref: "#/components/messages/default.res"
+            default:
+              code: 500
+              message:
+                $ref: "#/components/messages/error.unexpected"
+        bindingVersion: 0.2.0 # 0.2.0 doesn't exist yet
+
+  schemas:
+    component.sent-at:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
+
+    domain.auth-token.create.payload:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          description: Percentage to which the light should be dimmed to.
+          minimum: 0
+          maximum: 100
+
+        swag:
+          type: object
+          description: Light intensity measured in lumens.
+          properties:
+            umph:
+              type: integer
+        lumens:
+          type: integer
+          minimum: 0
+          description: Light intensity measured in lumens.
+        sentAt:
+          $ref: "#/components/schemas/component.sent-at"
+        some:
+          type: string
+          enum:
+            - on
+            - off
+      required:
+        - percentage
+
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: user
+      description: Your apiKey is your service's account id.
+
+  messageTraits:
+    command-headers:
+      headers:
+        type: object
+        properties:
+          trace:
+            type: string
+            description: "A value passed from the original command issuer to relate subsequent events."
+        required:
+          - trace

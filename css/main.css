@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .expand {
   width: 20px;
-  margin-bottom: -4px;
+  margin-bottom: -0.32rem;
   transform: rotate(-90deg);
 }
 
@@ -73,6 +73,15 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.examples-payload-tab + label,
+.examples-headers-tab + label {
+  font-weight: 500;
+}
+
+.examples-payload-tab:not(:checked) + label {
+  color: #38a89d;
+}
+
 .examples-payload-tab:checked + label {
   background-color: #38a89d;
   border-color: #38a89d;
@@ -80,6 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .examples-payload-tab:checked ~ .payload-examples {
   display: block;
+}
+
+.examples-headers-tab:not(:checked) + label {
+  color: #de751f;
 }
 
 .examples-headers-tab:checked + label {
@@ -103,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .right-block {
-  background-color: #263238;
+  background-color: #ffffff;
   margin-top: 0;
   margin-bottom: 0;
   z-index: 1;
@@ -131,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   .examples-panel {
     display: block;
     width: calc((100% - 256px) * 0.4);
-    background-color: #263238;
+    background-color: #ffffff;
   }
 
   .right-block {
@@ -161,9 +174,9 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     position: fixed;
     background: #4dc0b5;
-    width: 60px;
-    height: 60px;
-    bottom: 60px;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
     right: 20px;
     border-radius: 50%;
     z-index: 100;
@@ -204,8 +217,9 @@ h1, h2, h3, h4, h5, h6 {
   #burger-menu ~ .sidebar-panel {
     position: fixed;
     display: block;
-    height: 0;
-    top: -500px;
+    height: 100%;
+    width: 100%;
+    top: 100vh;
     overflow: hidden;
     transition: .2s;
     z-index: 90;
