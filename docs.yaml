@@ -35,7 +35,7 @@ components:
       tags:
         - name: auth-token
       traits:
-        - $ref: "#/components/traits/command-headers"
+        - $ref: "#/components/messageTraits/command-headers"
       payload:
         $ref: "#/components/schemas/create-auth-token-payload"
 
@@ -79,7 +79,7 @@ components:
       in: user
       description: Your apiKey is your service's account id.
 
-  traits:
+  messageTraits:
     command-headers:
       headers:
         type: object
