@@ -27,7 +27,7 @@
     
     <ul class="text-sm mt-10 list-reset mt-2">
       <li class="mb-3">
-        <a class="js-menu-item text-grey-darkest no-underline" href="#introduction">Introduction</a>
+        <a class="js-menu-item text-grey-darkest no-underline" href="#introduction">Overview</a>
       </li>
       
       <li class="mb-3">
@@ -36,11 +36,45 @@
       
     </ul>
     
-    <h2 class="text-xs uppercase text-grey mt-10 mb-4 font-thin">Domains</h2>
+    <h2 class="text-xs uppercase text-grey mt-10 mb-4 font-thin">Operations</h2>
     <ul class="text-sm list-reset mt-2">
       
       <!-- With tags in sidebar -->
       
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">role</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+              <a class="js-menu-item flex break-words no-underline text-grey-darkest mt-8 sm:mt-8 md:mt-3"
+                href="#operation-publish-/create.role">
+                <span class="bg-blue-dark font-bold h-6 no-underline text-white uppercase p-1 mr-2 rounded"
+                  style="height: 21px;font-size: 11px;" title="Publish">Cmd</span>
+                
+                <span style="padding-top: 2px;">
+                  create
+                </span>
+                
+              </a>
+            
+
+            
+          
+             
+
+            
+          
+        </div>
+      </div>
       
       <div class="mt-4 ">
         <div class="js-prop cursor-pointer py-2 flex property">
@@ -53,6 +87,10 @@
           </div>
         </div>
         <div class="children">
+          
+             
+
+            
           
              
 
@@ -72,6 +110,10 @@
           </div>
         </div>
         <div class="children">
+          
+             
+
+            
           
              
               <a class="js-menu-item flex break-words no-underline text-grey-darkest mt-8 sm:mt-8 md:mt-3"
@@ -95,6 +137,29 @@
         <div class="js-prop cursor-pointer py-2 flex property">
           <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
             <span class="text-sm font-normal"
+              style="word-break: break-word;">challenge</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
               style="word-break: break-word;">person-account</span>
             <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
               <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
@@ -102,6 +167,10 @@
           </div>
         </div>
         <div class="children">
+          
+             
+
+            
           
              
 
@@ -126,6 +195,10 @@
 
             
           
+             
+
+            
+          
         </div>
       </div>
       
@@ -145,6 +218,10 @@
 
             
           
+             
+
+            
+          
         </div>
       </div>
       
@@ -152,13 +229,17 @@
         <div class="js-prop cursor-pointer py-2 flex property">
           <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
             <span class="text-sm font-normal"
-              style="word-break: break-word;">challenge</span>
+              style="word-break: break-word;">webhook</span>
             <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
               <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
             </svg>
           </div>
         </div>
         <div class="children">
+          
+             
+
+            
           
              
 
@@ -185,29 +266,40 @@
   </div>
 
   <div class="markdown">
-    <p>The Core service provides identity, transaction, and accounting functionality for the <a href="https://sustainers.market">Sustainer's Market</a>.</p>
-<p>The service is composed of the following domains.</p>
-<h1><code>role</code></h1>
-<p>A <code>role</code> is a grouping of scopes.</p>
+    <ol>
+<li><a href="#introduction">Overview</a> - what is the Core service and how do you use it?</li>
+<li><a href="#servers">Servers</a> - where is the Core service accessed?</li>
+<li><a href="#operations">Operations</a> - what does the Core service let you do?</li>
+</ol>
+<h2>Overview</h2>
+<p>The Core service provides identity, transaction, and accounting functionality for the <a href="https://sustainers.market">Sustainer's Market</a>.</p>
+<p>To interact with the network, issue Commands to the endpoints described in the <a href="#operations">operations</a> section, and listen to events published to a webhook.</p>
+<p>The service is composed of the <code>role</code>, <code>principle</code>, <code>auth-token</code>, <code>person-account</code>, <code>service-account</code>, <code>service</code>, <code>webhook</code>, and <code>challenge</code> domains.</p>
+<h3>| <code>role</code></h3>
+<p>A <code>role</code> is a grouping of scopes. It lets you create meaningful labels that characterize what a group of access rights mean.</p>
+<p>For example, an Admin <code>role</code> can be characterized by scopes that give access to all resources.</p>
 <h4>Schema</h4>
-<pre><code class="language-javascript">  {
-    root: &quot;some-uuid&quot;
-    scopes: [
-      { 
-        domain: &quot;service&quot;, 
-        priviledges: [&quot;create&quot;]
-      },
-      { 
-        domain: &quot;challenge&quot;, 
-        priviledge: &quot;verify&quot;,
-        roots: &quot;[some-challenge-root]&quot;
-      },
-    ]
-  }
+<pre><code class="language-javascript">{
+  root: &quot;some-uuid&quot;,
+  name: &quot;Some Role&quot;,
+  scopes: [
+    { 
+      domain: &quot;service&quot;, 
+      priviledges: [&quot;create&quot;]
+    },
+    { 
+      domain: &quot;challenge&quot;, 
+      priviledges: [&quot;verify&quot;],
+      root: &quot;&lt;some-challenge-root&gt;&quot;
+    }
+  ]
+}
 </code></pre>
-<p>The example above has access to services that allow the <code>service:create</code> or <code>challenge:verify</code> scopes.</p>
-<h1><code>principle</code></h1>
-<p>A <code>principle</code> can create <code>auth-token</code>'s to interact with the network according to the roles it has been given.</p>
+<p>The <code>role</code> in the example above has access to services that allow the <code>service:create</code> or <code>challenge:verify</code> scopes.</p>
+<h4>Commands</h4>
+<p><a href="#operation-publish-/create.role">create</a></p>
+<h3>| <code>principle</code></h3>
+<p>A <code>principle</code> can create <code>auth-token</code>'s to interact with the network according to the <code>role</code>s it has been given.</p>
 <h4>Schema</h4>
 <pre><code class="language-javascript">  {
     root: &quot;some-uuid&quot;
@@ -217,20 +309,20 @@
     ]
   }
 </code></pre>
-<p>This <code>principle</code> in this example can access services that allow
-the <code>service:create</code>, <code>service:edit</code>, and the <code>challenge:verify:[some-uuid]</code> scopes.</p>
-<h4>Actions</h4>
+<h4>Commands</h4>
 <p>create, edit</p>
-<h1><strong>auth-token</strong></h1>
-<p>An <strong>auth-token</strong> represents a <a href="https://jwt.io">JWT</a> used as authentication and authorization for operations on a <strong>principle</strong>'s behalf.</p>
-<h1><strong>challenge</strong></h1>
-<p>A <strong>challenge</strong> represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).</p>
-<h1><strong>person-account</strong></h1>
-<p>A <strong>person-account</strong> represents a person with a unique phone number interacting with the network through a <strong>principle</strong>.</p>
-<h1><strong>service-account</strong></h1>
-<p>A <strong>service-account</strong> represents a service with a unique id interacting with the network through a <strong>principle</strong>.</p>
-<h1><strong>service</strong></h1>
-<p>A <strong>service</strong> represents a .</p>
+<h3>| <code>auth-token</code></h3>
+<p>An <code>auth-token</code> represents a <a href="https://jwt.io">JWT</a> used as authentication and authorization for operations on a <code>principle</code>'s behalf.</p>
+<h3>| <code>challenge</code></h3>
+<p>A <code>challenge</code> represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).</p>
+<h3>| <code>person-account</code></h3>
+<p>A <code>person-account</code> represents a person with a unique phone number interacting with the network through a <strong>principle</strong>.</p>
+<h3>| <code>service-account</code></h3>
+<p>A <code>service-account</code> represents a service with a unique id interacting with the network through a <code>principle</code>.</p>
+<h3>| <code>service</code></h3>
+<p>A <code>service</code> represents a business on the network.</p>
+<h3>| <code>webhook</code></h3>
+<p>A <code>webhook</code> represents an endpoint to publish Events to. For example, a <code>did-create.service</code> event will get published as a result of issuing the <code>create.service</code> command.</p>
 
   </div>
 </div>
@@ -248,7 +340,7 @@ the <code>service:create</code>, <code>service:edit</code>, and the <code>challe
         <div>
           <div class="pr-4 font-mono">
             
-<span class="string-chunk" >core</span><span class="string-chunk" >.sustainers</span><span class="string-chunk" >.network</span>
+<span class="string-chunk" >https:</span><span class="string-chunk" >/</span><span class="string-chunk" >/core</span><span class="string-chunk" >.sustainers</span><span class="string-chunk" >.network</span>
 
 
             
@@ -257,7 +349,8 @@ the <code>service:create</code>, <code>service:edit</code>, and the <code>challe
             
           </div>
           <div class="text-xs text-grey-dark">
-            
+            <p>Use this server to interact with the production network and create real transactions.</p>
+
           </div>
         </div>
       </div>
@@ -276,7 +369,7 @@ the <code>service:create</code>, <code>service:edit</code>, and the <code>challe
         <div>
           <div class="pr-4 font-mono">
             
-<span class="string-chunk" >core</span><span class="string-chunk" >.sandbox</span><span class="string-chunk" >.sustainers</span><span class="string-chunk" >.network</span>
+<span class="string-chunk" >https:</span><span class="string-chunk" >/</span><span class="string-chunk" >/core</span><span class="string-chunk" >.sandbox</span><span class="string-chunk" >.sustainers</span><span class="string-chunk" >.network</span>
 
 
             
@@ -285,7 +378,8 @@ the <code>service:create</code>, <code>service:edit</code>, and the <code>challe
             
           </div>
           <div class="text-xs text-grey-dark">
-            
+            <p>Use this server to access sandbox data. All transactions will be faked.</p>
+
           </div>
         </div>
       </div>
@@ -309,6 +403,645 @@ the <code>service:create</code>, <code>service:edit</code>, and the <code>challe
 <a name="operations"></a>
 <h2 class="mb-4 ml-8 font-medium">Operations</h2>
 
+
+  <div class="responsive-container">
+    
+      
+
+<a name="operation-publish-/create.role"></a>
+<div class="center-block p-8">
+  <div class="operation pt-8 pb-8">
+    <h3 class="font-mono text-base">
+      
+      <span class="font-mono border border-blue text-blue p-1 uppercase rounded" title="Publish">Cmd</span>
+      
+      
+      
+<span class="string-chunk" >/create</span><span class="string-chunk" >.role</span>
+
+    </h3>
+
+    <div class="mt-4 mb-4 markdown"></div>
+
+    <div class="mt-4 mb-4 markdown"><p>Creates a role.</p>
+</div>
+
+    
+      <p>Accepts the following message:</p>
+      
+
+<div class="bg-grey-lighter rounded p-4 mt-2">
+  <div class="text-sm text-grey-darker mb-2">
+    
+    
+      Create role command
+      
+        <div>
+            <span class="text-grey">path</span><span class="border text-orange rounded text-xs ml-1 py-0 px-2">/</span>
+        </div>
+      
+    
+  </div>
+  <p class="text-grey-dark text-sm"></p>
+  <div class="mt-4 mb-4 markdown"><p>Seriously, real good.</p>
+</div>
+  
+<div>
+  
+
+<div class="bg-grey-lighter  rounded">
+  <div class="is-open">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">Payload</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lightest py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">percentage</span>
+        
+        
+          <div class="text-red-dark text-xs">required</div>
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At least 0">>= 0</span>
+            
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At most 100"><= 100</span>
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Percentage to which the light should be dimmed to.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">swag</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Light intensity measured in lumens.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lighter py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lighter pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">umph</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey">Additional properties will be ignored.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">lumens</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+integer
+          
+          
+          <div class="inline-block">
+            
+            
+              <span class="bg-purple-dark font-bold no-underline text-white rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;" title="At least 0">>= 0</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Light intensity measured in lumens.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">sentAt</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+              <span class="bg-yellow-dark font-bold no-underline text-black rounded lowercase ml-2"
+                style="height: 20px;font-size: 11px;padding: 3px;">date-time</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>Date and time when the message was sent.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">some</span>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+          <div class="text-xs">
+            Enum:
+            
+              <span class="border text-orange rounded ml-1 py-0 px-2">&quot;on&quot;</span>
+            
+              <span class="border text-orange rounded ml-1 py-0 px-2">&quot;off&quot;</span>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey">Additional properties will be ignored.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+    <div class="mt-4">
+      
+<div>
+  
+
+<div class="bg-grey-lighter  rounded">
+  <div class="is-open">
+    <div class="js-prop cursor-pointer py-2 flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">Headers</span>
+        
+        <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0"
+          xmlns="http://www.w3.org/2000/svg" y="0">
+          <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+        </svg>
+        
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+object
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+      <div class="children bg-grey-lightest py-4 rounded">
+        
+          
+            
+
+<div class="bg-grey-lightest pl-8 pr-8 rounded">
+  <div class="">
+    <div class=" flex property">
+      <div class="pr-4" style="margin-top:-2px; min-width: 100px; max-width: 160px; width: 20%;">
+        <span class="text-sm " style="word-break: break-word;">trace</span>
+        
+        
+          <div class="text-red-dark text-xs">required</div>
+        
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal font-bold">
+          
+string
+          
+          
+          <div class="inline-block">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+
+        
+          <div class="text-sm markdown"><p>A value passed from the original command issuer to relate subsequent events.</p>
+</div>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+          
+        
+
+        
+
+        
+          
+            <p class="pl-6 mb-2 mt-4 text-xs text-grey">Additional properties will be ignored.</p>
+          
+        
+
+        
+
+        
+      </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+    </div>
+  
+</div>
+
+
+    
+
+    
+<div class="mt-4">
+  
+    <span class="bg-grey-dark font-normal text-sm no-underline text-white rounded lowercase mr-2 px-2 py-1" title="">role</span>
+  
+</div>
+
+
+  </div>
+</div>
+
+<div class="right-block p-8">
+  <h4 class="text-lg text-grey-dark mb-4">Examples</h4>
+
+  
+    
+
+<form>
+  <input type="radio" checked id="example-payload--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIHJvbGUgY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInBheWxvYWQiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsicGVyY2VudGFnZSI6eyJ0eXBlIjoiaW50ZWdlciIsImRlc2NyaXB0aW9uIjoiUGVyY2VudGFnZSB0byB3aGljaCB0aGUgbGlnaHQgc2hvdWxkIGJlIGRpbW1lZCB0by4iLCJtaW5pbXVtIjowLCJtYXhpbXVtIjoxMDB9LCJzd2FnIjp7InR5cGUiOiJvYmplY3QiLCJkZXNjcmlwdGlvbiI6IkxpZ2h0IGludGVuc2l0eSBtZWFzdXJlZCBpbiBsdW1lbnMuIiwicHJvcGVydGllcyI6eyJ1bXBoIjp7InR5cGUiOiJpbnRlZ2VyIn19fSwibHVtZW5zIjp7InR5cGUiOiJpbnRlZ2VyIiwibWluaW11bSI6MCwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiJ9LCJzZW50QXQiOnsidHlwZSI6InN0cmluZyIsImZvcm1hdCI6ImRhdGUtdGltZSIsImRlc2NyaXB0aW9uIjoiRGF0ZSBhbmQgdGltZSB3aGVuIHRoZSBtZXNzYWdlIHdhcyBzZW50LiJ9LCJzb21lIjp7InR5cGUiOiJzdHJpbmciLCJlbnVtIjpbIm9uIiwib2ZmIl19fSwicmVxdWlyZWQiOlsicGVyY2VudGFnZSJdfSwiaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19LCJyZXF1aXJlZCI6WyJ0cmFjZSJdfSwieC1wYXJzZXItb3JpZ2luYWwtdHJhaXRzIjpbeyJoZWFkZXJzIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InRyYWNlIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkEgdmFsdWUgcGFzc2VkIGZyb20gdGhlIG9yaWdpbmFsIGNvbW1hbmQgaXNzdWVyIHRvIHJlbGF0ZSBzdWJzZXF1ZW50IGV2ZW50cy4ifX0sInJlcXVpcmVkIjpbInRyYWNlIl19fV0sInNjaGVtYUZvcm1hdCI6ImFwcGxpY2F0aW9uL3ZuZC5hYWkuYXN5bmNhcGk7dmVyc2lvbj0yLjAuMCJ9" name="tab" class="examples-payload-tab hidden" />
+  <label for="example-payload--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIHJvbGUgY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInBheWxvYWQiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsicGVyY2VudGFnZSI6eyJ0eXBlIjoiaW50ZWdlciIsImRlc2NyaXB0aW9uIjoiUGVyY2VudGFnZSB0byB3aGljaCB0aGUgbGlnaHQgc2hvdWxkIGJlIGRpbW1lZCB0by4iLCJtaW5pbXVtIjowLCJtYXhpbXVtIjoxMDB9LCJzd2FnIjp7InR5cGUiOiJvYmplY3QiLCJkZXNjcmlwdGlvbiI6IkxpZ2h0IGludGVuc2l0eSBtZWFzdXJlZCBpbiBsdW1lbnMuIiwicHJvcGVydGllcyI6eyJ1bXBoIjp7InR5cGUiOiJpbnRlZ2VyIn19fSwibHVtZW5zIjp7InR5cGUiOiJpbnRlZ2VyIiwibWluaW11bSI6MCwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiJ9LCJzZW50QXQiOnsidHlwZSI6InN0cmluZyIsImZvcm1hdCI6ImRhdGUtdGltZSIsImRlc2NyaXB0aW9uIjoiRGF0ZSBhbmQgdGltZSB3aGVuIHRoZSBtZXNzYWdlIHdhcyBzZW50LiJ9LCJzb21lIjp7InR5cGUiOiJzdHJpbmciLCJlbnVtIjpbIm9uIiwib2ZmIl19fSwicmVxdWlyZWQiOlsicGVyY2VudGFnZSJdfSwiaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19LCJyZXF1aXJlZCI6WyJ0cmFjZSJdfSwieC1wYXJzZXItb3JpZ2luYWwtdHJhaXRzIjpbeyJoZWFkZXJzIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InRyYWNlIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkEgdmFsdWUgcGFzc2VkIGZyb20gdGhlIG9yaWdpbmFsIGNvbW1hbmQgaXNzdWVyIHRvIHJlbGF0ZSBzdWJzZXF1ZW50IGV2ZW50cy4ifX0sInJlcXVpcmVkIjpbInRyYWNlIl19fV0sInNjaGVtYUZvcm1hdCI6ImFwcGxpY2F0aW9uL3ZuZC5hYWkuYXN5bmNhcGk7dmVyc2lvbj0yLjAuMCJ9" class="py-1 px-2 mr-2 mb-4 text-grey-lightest text-sm border rounded focus:outline-none cursor-pointer text-grey-lightest" >Payload</label>
+
+  <input type="radio" id="example-headers--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIHJvbGUgY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInBheWxvYWQiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsicGVyY2VudGFnZSI6eyJ0eXBlIjoiaW50ZWdlciIsImRlc2NyaXB0aW9uIjoiUGVyY2VudGFnZSB0byB3aGljaCB0aGUgbGlnaHQgc2hvdWxkIGJlIGRpbW1lZCB0by4iLCJtaW5pbXVtIjowLCJtYXhpbXVtIjoxMDB9LCJzd2FnIjp7InR5cGUiOiJvYmplY3QiLCJkZXNjcmlwdGlvbiI6IkxpZ2h0IGludGVuc2l0eSBtZWFzdXJlZCBpbiBsdW1lbnMuIiwicHJvcGVydGllcyI6eyJ1bXBoIjp7InR5cGUiOiJpbnRlZ2VyIn19fSwibHVtZW5zIjp7InR5cGUiOiJpbnRlZ2VyIiwibWluaW11bSI6MCwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiJ9LCJzZW50QXQiOnsidHlwZSI6InN0cmluZyIsImZvcm1hdCI6ImRhdGUtdGltZSIsImRlc2NyaXB0aW9uIjoiRGF0ZSBhbmQgdGltZSB3aGVuIHRoZSBtZXNzYWdlIHdhcyBzZW50LiJ9LCJzb21lIjp7InR5cGUiOiJzdHJpbmciLCJlbnVtIjpbIm9uIiwib2ZmIl19fSwicmVxdWlyZWQiOlsicGVyY2VudGFnZSJdfSwiaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19LCJyZXF1aXJlZCI6WyJ0cmFjZSJdfSwieC1wYXJzZXItb3JpZ2luYWwtdHJhaXRzIjpbeyJoZWFkZXJzIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InRyYWNlIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkEgdmFsdWUgcGFzc2VkIGZyb20gdGhlIG9yaWdpbmFsIGNvbW1hbmQgaXNzdWVyIHRvIHJlbGF0ZSBzdWJzZXF1ZW50IGV2ZW50cy4ifX0sInJlcXVpcmVkIjpbInRyYWNlIl19fV0sInNjaGVtYUZvcm1hdCI6ImFwcGxpY2F0aW9uL3ZuZC5hYWkuYXN5bmNhcGk7dmVyc2lvbj0yLjAuMCJ9" name="tab" class="examples-headers-tab hidden"  />
+  <label for="example-headers--eyJuYW1lIjoiLyIsInRpdGxlIjoiQ3JlYXRlIHJvbGUgY29tbWFuZCIsInN1bW1hcnkiOiJEbyBzb21ldGhpbmcgcXVpdGUgZ29vZC4iLCJkZXNjcmlwdGlvbiI6IlNlcmlvdXNseSwgcmVhbCBnb29kLiIsImNvbnRlbnRUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInBheWxvYWQiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsicGVyY2VudGFnZSI6eyJ0eXBlIjoiaW50ZWdlciIsImRlc2NyaXB0aW9uIjoiUGVyY2VudGFnZSB0byB3aGljaCB0aGUgbGlnaHQgc2hvdWxkIGJlIGRpbW1lZCB0by4iLCJtaW5pbXVtIjowLCJtYXhpbXVtIjoxMDB9LCJzd2FnIjp7InR5cGUiOiJvYmplY3QiLCJkZXNjcmlwdGlvbiI6IkxpZ2h0IGludGVuc2l0eSBtZWFzdXJlZCBpbiBsdW1lbnMuIiwicHJvcGVydGllcyI6eyJ1bXBoIjp7InR5cGUiOiJpbnRlZ2VyIn19fSwibHVtZW5zIjp7InR5cGUiOiJpbnRlZ2VyIiwibWluaW11bSI6MCwiZGVzY3JpcHRpb24iOiJMaWdodCBpbnRlbnNpdHkgbWVhc3VyZWQgaW4gbHVtZW5zLiJ9LCJzZW50QXQiOnsidHlwZSI6InN0cmluZyIsImZvcm1hdCI6ImRhdGUtdGltZSIsImRlc2NyaXB0aW9uIjoiRGF0ZSBhbmQgdGltZSB3aGVuIHRoZSBtZXNzYWdlIHdhcyBzZW50LiJ9LCJzb21lIjp7InR5cGUiOiJzdHJpbmciLCJlbnVtIjpbIm9uIiwib2ZmIl19fSwicmVxdWlyZWQiOlsicGVyY2VudGFnZSJdfSwiaGVhZGVycyI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0cmFjZSI6eyJ0eXBlIjoic3RyaW5nIiwiZGVzY3JpcHRpb24iOiJBIHZhbHVlIHBhc3NlZCBmcm9tIHRoZSBvcmlnaW5hbCBjb21tYW5kIGlzc3VlciB0byByZWxhdGUgc3Vic2VxdWVudCBldmVudHMuIn19LCJyZXF1aXJlZCI6WyJ0cmFjZSJdfSwieC1wYXJzZXItb3JpZ2luYWwtdHJhaXRzIjpbeyJoZWFkZXJzIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InRyYWNlIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkEgdmFsdWUgcGFzc2VkIGZyb20gdGhlIG9yaWdpbmFsIGNvbW1hbmQgaXNzdWVyIHRvIHJlbGF0ZSBzdWJzZXF1ZW50IGV2ZW50cy4ifX0sInJlcXVpcmVkIjpbInRyYWNlIl19fV0sInNjaGVtYUZvcm1hdCI6ImFwcGxpY2F0aW9uL3ZuZC5hYWkuYXN5bmNhcGk7dmVyc2lvbj0yLjAuMCJ9"
+      class="py-1 px-2 mr-2 mb-4 text-sm border rounded focus:outline-none cursor-pointer text-grey-lightest" >Headers</label>
+
+  <div class="payload-examples mt-4">
+    
+    <pre class="hljs mb-4 border border-grey-darkest rounded"><code>{
+  "percentage": 0,
+  "swag": {
+    "umph": 0
+  },
+  "lumens": 0,
+  "sentAt": "2019-09-08T20:36:28Z",
+  "some": "on"
+}</code></pre>
+    <h6 class="text-xs text-grey italic">This example has been generated automatically.</h6>
+    
+  </div>
+
+  <div class="headers-examples mt-4">
+    
+    <pre class="hljs mb-4 border border-grey-darkest rounded"><code>{
+  "trace": "string"
+}</code></pre>
+    <h6 class="text-xs text-grey italic">This example has been generated automatically.</h6>
+    
+  </div>
+</form>
+
+
+  
+</div>
+
+
+
+    
+    
+  </div>
 
   <div class="responsive-container">
     
@@ -923,7 +1656,7 @@ string
     "umph": 0
   },
   "lumens": 0,
-  "sentAt": "2019-09-08T08:56:43Z",
+  "sentAt": "2019-09-08T20:36:28Z",
   "some": "on"
 }</code></pre>
     <h6 class="text-xs text-grey italic">This example has been generated automatically.</h6>

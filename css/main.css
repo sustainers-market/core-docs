@@ -2,6 +2,11 @@ html, body {
   font-weight: lighter;
 }
 
+p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: lighter;
 }
@@ -17,16 +22,16 @@ h1, h2, h3, h4, h5, h6 {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  margin-top: 1em;
+  margin-top: 1.2em;
   margin-bottom: .5em;
 }
 
 .markdown h1 {
-  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .markdown h2 {
-  font-size: 1.3em;
+  font-weight: 500;
 }
 
 .markdown h3 {
@@ -48,21 +53,30 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.markdown pre {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    margin-top: .5rem;
-    max-width: 600px;
-}
-
 .markdown code {
     padding: 0.2rem;
 }
 
+.markdown pre {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    max-width: 500px;
+    max-height: 300px;
+    line-height: 1.4;
+    font-size: 0.9em;
+    overflow: scroll;
+}
+
+.markdown pre code {
+    padding: 0;
+}
+
+
 .markdown code,
 .markdown pre {
-    background-color: #f1f5f8; 
-    color: #282c34;
+    background-color: #f1f1f1; 
+    color: #323e54;
     border-radius: .25rem;
      
 }

@@ -4,38 +4,49 @@ info:
   title: Core | Sustainer's Market Network
   version: "1.0.0"
   description: |
+    1. [Overview](#introduction) - what is the Core service and how do you use it?
+    2. [Servers](#servers) - where is the Core service accessed?
+    3. [Operations](#operations) - what does the Core service let you do?
+
+    ## Overview 
     The Core service provides identity, transaction, and accounting functionality for the [Sustainer's Market](https://sustainers.market).
 
-    The service is composed of the following domains:
+    To interact with the network, issue Commands to the endpoints described in the [operations](#operations) section, and listen to events published to a webhook.
 
-    # `role`
+    The service is composed of the `role`, `principle`, `auth-token`, `person-account`, `service-account`, `service`, `webhook`, and `challenge` domains.
 
-    A `role` is a grouping of scopes.
+    ### | `role`
+    A `role` is a grouping of scopes. It lets you create meaningful labels that characterize what a group of access rights mean.
+
+    For example, an Admin `role` can be characterized by scopes that give access to all resources. 
 
     #### Schema
-
     ```javascript
-      {
-        root: "some-uuid"
-        scopes: [
-          { 
-            domain: "service", 
-            priviledges: ["create"]
-          },
-          { 
-            domain: "challenge", 
-            priviledge: "verify",
-            roots: "[some-challenge-root]"
-          },
-        ]
-      }
+    {
+      root: "some-uuid",
+      name: "Some Role",
+      scopes: [
+        { 
+          domain: "service", 
+          priviledges: ["create"]
+        },
+        { 
+          domain: "challenge", 
+          priviledges: ["verify"],
+          root: "<some-challenge-root>"
+        }
+      ]
+    }
     ```
 
-    The example above has access to services that allow the `service:create` or `challenge:verify` scopes. 
+    The `role` in the example above has access to services that allow the `service:create` or `challenge:verify` scopes. 
 
-    # `principle`
+    #### Commands 
+    [create](#operation-publish-/create.role)
 
-    A `principle` can create `auth-token`'s to interact with the network according to the roles it has been given.
+    ### | `principle`
+
+    A `principle` can create `auth-token`'s to interact with the network according to the `role`s it has been given.
 
     #### Schema
 
@@ -48,51 +59,68 @@ info:
         ]
       }
     ```
-    This `principle` in this example can access services that allow 
-    the `service:create`, `service:edit`, and the `challenge:verify:[some-uuid]` scopes.
 
-    #### Actions 
+    #### Commands
     create, edit
 
-    # **auth-token**
+    ### | `auth-token`
 
-    An **auth-token** represents a [JWT](https://jwt.io) used as authentication and authorization for operations on a **principle**'s behalf.
+    An `auth-token` represents a [JWT](https://jwt.io) used as authentication and authorization for operations on a `principle`'s behalf.
 
-    # **challenge**
+    ### | `challenge`
 
-    A **challenge** represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).
+    A `challenge` represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).
 
-    # **person-account** 
+    ### | `person-account`
 
-    A **person-account** represents a person with a unique phone number interacting with the network through a **principle**.
+    A `person-account` represents a person with a unique phone number interacting with the network through a **principle**.
 
-    # **service-account** 
+    ### | `service-account` 
 
-    A **service-account** represents a service with a unique id interacting with the network through a **principle**.
+    A `service-account` represents a service with a unique id interacting with the network through a `principle`.
 
-    # **service** 
+    ### | `service`
 
-    A **service** represents a .
+    A `service` represents a business on the network.
+
+    ### | `webhook`
+
+    A `webhook` represents an endpoint to publish Events to. For example, a `did-create.service` event will get published as a result of issuing the `create.service` command.
 
 servers:
   prod:
-    url: core.sustainers.network
+    url: https://core.sustainers.network
     protocol: http
+    description: Use this server to interact with the production network and create real transactions.
   sandbox:
-    url: core.sandbox.sustainers.network
+    url: https://core.sandbox.sustainers.network
     protocol: http
+    description: Use this server to access sandbox data. All transactions will be faked.
 
 defaultContentType: application/json
 
 tags:
+  - name: role
   - name: principle
   - name: auth-token
+  - name: challenge
   - name: person-account
   - name: sevice-account
   - name: service
-  - name: challenge
+  - name: webhook
 
 channels:
+  /create.role:
+    publish:
+      operationId: create.role.core.sustainers.network
+      summary: create
+      description: |
+        Creates a role.
+      tags:
+        - name: role
+      message:
+        $ref: "#/components/messages/domain.role.create.req"
+
   /create.auth-token:
     publish:
       operationId: create.auth-token.core.sustainers.network
@@ -125,6 +153,17 @@ components:
       payload:
         $ref: "#/components/schemas/domain.auth-token.create.payload"
 
+    domain.role.create.req:
+      name: /
+      title: Create role command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.role.create.payload"
+
     error.unexpected:
       payload:
         type: object
@@ -154,6 +193,35 @@ components:
       description: Date and time when the message was sent.
 
     domain.auth-token.create.payload:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          description: Percentage to which the light should be dimmed to.
+          minimum: 0
+          maximum: 100
+
+        swag:
+          type: object
+          description: Light intensity measured in lumens.
+          properties:
+            umph:
+              type: integer
+        lumens:
+          type: integer
+          minimum: 0
+          description: Light intensity measured in lumens.
+        sentAt:
+          $ref: "#/components/schemas/component.sent-at"
+        some:
+          type: string
+          enum:
+            - on
+            - off
+      required:
+        - percentage
+
+    domain.role.create.payload:
       type: object
       properties:
         percentage:
