@@ -93,5 +93,25 @@ components:
           trace:
             type: string
             description: "A value passed from the original command issuer to relate subsequent events."
+          issuedDate:
+            type: string
+            format: date-time
+          sourceCommand:
+            type: object
+            description: If this command was issued by another command, the issuer's info should be described here.
+            properties: 
+              id: 
+                type: string
+                description: The issuing command's id.
+              action:
+                type: string
+                description: The issuing command's action.
+              domain:
+                type: string
+                description: The issuing command's domain.
+              service:
+                type: string
+                description: The issuing command's service.
+              action:
         required:
           - trace

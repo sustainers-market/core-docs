@@ -4,9 +4,9 @@ info:
   title: Core | Sustainer's Market Network
   version: "1.0.0"
   description: |
-    1. [Overview](#introduction) - what is the Core service and how do you use it?
-    2. [Servers](#servers) - where is the Core service accessed?
-    3. [Operations](#operations) - what does the Core service let you do?
+    * [Overview](#introduction) - what is the Core service and how do you use it?
+    * [Servers](#servers) - where is the Core service accessed?
+    * [Operations](#operations) - what does the Core service let you do?
 
     ## Overview 
     The Core service provides identity, transaction, and accounting functionality for the [Sustainer's Market](https://sustainers.market).
@@ -45,11 +45,9 @@ info:
     [create](#operation-publish-/create.role)
 
     ### | `principle`
-
     A `principle` can create `auth-token`'s to interact with the network according to the `role`s it has been given.
 
     #### Schema
-
     ```javascript
       {
         root: "some-uuid"
@@ -64,28 +62,101 @@ info:
     create, edit
 
     ### | `auth-token`
-
     An `auth-token` represents a [JWT](https://jwt.io) used as authentication and authorization for operations on a `principle`'s behalf.
 
-    ### | `challenge`
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        token: "<the jwt token>",
+      }
+    ```
 
+    #### Commands
+    create, edit
+
+    ### | `challenge`
     A `challenge` represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).
 
-    ### | `person-account`
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        code: 123456,
+        hash: "<some-data-hash>"
+      }
+    ```
 
+    #### Commands
+    create, edit
+
+    ### | `person-account`
     A `person-account` represents a person with a unique phone number interacting with the network through a **principle**.
 
-    ### | `service-account` 
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        phone: "+11234567890",
+        phoneVerified: true,
+        id: "some-chosen-unique-id",
+        name: {
+          short: "Some",
+          full: "Some Full Name"
+        },
+        principle: "<some principle>"
+      }
+    ```
 
-    A `service-account` represents a service with a unique id interacting with the network through a `principle`.
+    #### Commands
+    create, edit
+
+    ### | `service-account` 
+    A `service-account` represents a `service` interacting with the network through a `principle`.
+
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        id: "some-auto-generated-id",
+        domain: "core.sustainers.network",
+        secret: 1234567890,
+        principle: "<some principle>"
+      }
+    ```
+
+    #### Commands
+    create, edit
 
     ### | `service`
-
     A `service` represents a business on the network.
 
-    ### | `webhook`
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        name: "Some Service Name",
+        id: "some-chosen-unique-in"
+      }
+    ```
 
+    #### Commands
+    create, edit
+
+    ### | `webhook`
     A `webhook` represents an endpoint to publish Events to. For example, a `did-create.service` event will get published as a result of issuing the `create.service` command.
+
+    #### Schema
+    ```javascript
+      {
+        root: "some-uuid",
+        name: "Some Name",
+        url: "https://some.endpoint.to.send/events/to"
+      }
+    ```
+
+    #### Commands
+    create, edit
 
 servers:
   prod:
@@ -105,7 +176,7 @@ tags:
   - name: auth-token
   - name: challenge
   - name: person-account
-  - name: sevice-account
+  - name: service-account
   - name: service
   - name: webhook
 
@@ -121,17 +192,82 @@ channels:
       message:
         $ref: "#/components/messages/domain.role.create.req"
 
+  /create.principle:
+    publish:
+      operationId: create.principle.core.sustainers.network
+      summary: create
+      description: |
+        Creates a principle.
+      tags:
+        - name: principle
+      message:
+        $ref: "#/components/messages/domain.principle.create.req"
+
   /create.auth-token:
     publish:
       operationId: create.auth-token.core.sustainers.network
       summary: create
       description: |
         This **command** creates an
-        # auth token.
       tags:
         - name: auth-token
       message:
         $ref: "#/components/messages/domain.auth-token.create.req"
+
+  /create.challenge:
+    publish:
+      operationId: create.challenge.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+      tags:
+        - name: challenge
+      message:
+        $ref: "#/components/messages/domain.challenge.create.req"
+
+  /create.person-account:
+    publish:
+      operationId: create.person-account.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+      tags:
+        - name: person-account
+      message:
+        $ref: "#/components/messages/domain.person-account.create.req"
+
+  /create.service-account:
+    publish:
+      operationId: create.service-account.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+      tags:
+        - name: service-account
+      message:
+        $ref: "#/components/messages/domain.service-account.create.req"
+
+  /create.service:
+    publish:
+      operationId: create.service.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+      tags:
+        - name: service
+      message:
+        $ref: "#/components/messages/domain.service.create.req"
+
+  /create.webhook:
+    publish:
+      operationId: create.webhook.core.sustainers.network
+      summary: create
+      description: |
+        This **command** creates an
+      tags:
+        - name: webhook
+      message:
+        $ref: "#/components/messages/domain.webhook.create.req"
 
 components:
   messages:
@@ -164,6 +300,72 @@ components:
       payload:
         $ref: "#/components/schemas/domain.role.create.payload"
 
+    domain.principle.create.req:
+      name: /
+      title: Create principle command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.principle.create.payload"
+
+    domain.challenge.create.req:
+      name: /
+      title: Create challenge command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.challenge.create.payload"
+
+    domain.person-account.create.req:
+      name: /
+      title: Create person-account command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.person-account.create.payload"
+
+    domain.service-account.create.req:
+      name: /
+      title: Create service-account command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.service-account.create.payload"
+
+    domain.service.create.req:
+      name: /
+      title: Create service command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.service.create.payload"
+
+    domain.webhook.create.req:
+      name: /
+      title: Create webhook command
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      traits:
+        - $ref: "#/components/messageTraits/command-headers"
+      payload:
+        $ref: "#/components/schemas/domain.webhook.create.payload"
+
     error.unexpected:
       payload:
         type: object
@@ -194,61 +396,102 @@ components:
 
     domain.auth-token.create.payload:
       type: object
-      properties:
-        percentage:
-          type: integer
-          description: Percentage to which the light should be dimmed to.
-          minimum: 0
-          maximum: 100
-
-        swag:
-          type: object
-          description: Light intensity measured in lumens.
-          properties:
-            umph:
-              type: integer
-        lumens:
-          type: integer
-          minimum: 0
-          description: Light intensity measured in lumens.
-        sentAt:
-          $ref: "#/components/schemas/component.sent-at"
-        some:
-          type: string
-          enum:
-            - on
-            - off
-      required:
-        - percentage
 
     domain.role.create.payload:
       type: object
       properties:
-        percentage:
-          type: integer
-          description: Percentage to which the light should be dimmed to.
-          minimum: 0
-          maximum: 100
-
-        swag:
-          type: object
-          description: Light intensity measured in lumens.
-          properties:
-            umph:
-              type: integer
-        lumens:
-          type: integer
-          minimum: 0
-          description: Light intensity measured in lumens.
-        sentAt:
-          $ref: "#/components/schemas/component.sent-at"
-        some:
+        name:
           type: string
-          enum:
-            - on
-            - off
+          description: The name of the new role.
+        scopes:
+          type: array
+          description: The scopes to associate with the new role.
+          items:
+            type: object
+            description: A scope.
+            properties:
+              domain:
+                type: string
+              permissions:
+                type: array
+                items:
+                  type: string
+                  description: A permission.
+              root:
+                type: string
       required:
-        - percentage
+        - name
+        - scopes
+
+    domain.principle.create.payload:
+      type: object
+      properties:
+        roles:
+          type: array
+          description: The roles this principle can play.
+          items:
+            type: string
+            description: A role.
+
+    domain.challenge.create.payload:
+      type: object
+      properties:
+        phone:
+          type: string
+          description: The phone number to send the challenge code to.
+        hash:
+          type: string
+          description: A hash that must also be provided with the `verify` command in order to verify successfully.
+      required:
+        - phone
+
+    domain.person-account.create.payload:
+      type: object
+      properties:
+        phone:
+          type: string
+          description: |
+            The phone number to associate with the account. 
+            If a phone number is supplied, `create.challenge` will be issued in the background with the provided phone number.
+        name:
+          type: object
+          properties:
+            short:
+              type: string
+              description: The name the person want's to be referred to.
+            full:
+              type: string
+              description: The person's full name.
+        roles:
+          type: array
+          description: The roles this account's `principle` can play.
+          items:
+            type: string
+            description: A role.
+
+    domain.service-account.create.payload:
+      type: object
+      properties:
+        roles:
+          type: array
+          description: The roles this account's `principle` can play.
+          items:
+            type: string
+            description: A role.
+
+    domain.service.create.payload:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the service.
+
+    domain.webhook.create.payload:
+      type: object
+      properties:
+        url:
+          type: string
+          description: The url to send events to.
 
   securitySchemes:
     apiKey:
@@ -261,8 +504,28 @@ components:
       headers:
         type: object
         properties:
+          issuedDate:
+            type: string
+            format: date-time
+            description: The time the command was issued.
           trace:
             type: string
             description: "A value passed from the original command issuer to relate subsequent events."
+          sourceCommand:
+            type: object
+            description: If this command was issued by another command, the issuer's info should be described here.
+            properties:
+              id:
+                type: string
+                description: The issuing command's id.
+              action:
+                type: string
+                description: The issuing command's action.
+              domain:
+                type: string
+                description: The issuing command's domain.
+              service:
+                type: string
+                description: The issuing command's service.
         required:
-          - trace
+          - issuedDate
