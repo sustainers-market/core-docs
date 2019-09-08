@@ -45,7 +45,26 @@
       <div class="mt-4 ">
         <div class="js-prop cursor-pointer py-2 flex property">
           <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
-            <span class="text-sm"
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">principle</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
               style="word-break: break-word;">auth-token</span>
             <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
               <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
@@ -72,6 +91,82 @@
         </div>
       </div>
       
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">person-account</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">sevice-account</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">service</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
+      <div class="mt-4 ">
+        <div class="js-prop cursor-pointer py-2 flex property">
+          <div class="pr-4" style="margin-top:-2px; min-width: 25%;">
+            <span class="text-sm font-normal"
+              style="word-break: break-word;">challenge</span>
+            <svg class="expand" version="1.1" viewBox="0 0 24 24" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+              <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+            </svg>
+          </div>
+        </div>
+        <div class="children">
+          
+             
+
+            
+          
+        </div>
+      </div>
+      
       
 
       
@@ -90,7 +185,52 @@
   </div>
 
   <div class="markdown">
-    <p>The Core service provides authentication, accounts, event sourcing, and payments functionality for the <a href="https://sustainers.market">Sustainer's Market</a>.</p>
+    <p>The Core service provides identity, transaction, and accounting functionality for the <a href="https://sustainers.market">Sustainer's Market</a>.</p>
+<p>The service is composed of the following domains.</p>
+<h1><code>role</code></h1>
+<p>A <code>role</code> is a grouping of scopes.</p>
+<h4>Schema</h4>
+<pre><code class="language-javascript">  {
+    root: &quot;some-uuid&quot;
+    scopes: [
+      { 
+        domain: &quot;service&quot;, 
+        priviledges: [&quot;create&quot;]
+      },
+      { 
+        domain: &quot;challenge&quot;, 
+        priviledge: &quot;verify&quot;,
+        roots: &quot;[some-challenge-root]&quot;
+      },
+    ]
+  }
+</code></pre>
+<p>The example above has access to services that allow the <code>service:create</code> or <code>challenge:verify</code> scopes.</p>
+<h1><code>principle</code></h1>
+<p>A <code>principle</code> can create <code>auth-token</code>'s to interact with the network according to the roles it has been given.</p>
+<h4>Schema</h4>
+<pre><code class="language-javascript">  {
+    root: &quot;some-uuid&quot;
+    roles: [
+      &quot;&lt;some-role-root&gt;&quot;,
+      &quot;&lt;someother-role-root&gt;&quot;,
+    ]
+  }
+</code></pre>
+<p>This <code>principle</code> in this example can access services that allow
+the <code>service:create</code>, <code>service:edit</code>, and the <code>challenge:verify:[some-uuid]</code> scopes.</p>
+<h4>Actions</h4>
+<p>create, edit</p>
+<h1><strong>auth-token</strong></h1>
+<p>An <strong>auth-token</strong> represents a <a href="https://jwt.io">JWT</a> used as authentication and authorization for operations on a <strong>principle</strong>'s behalf.</p>
+<h1><strong>challenge</strong></h1>
+<p>A <strong>challenge</strong> represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).</p>
+<h1><strong>person-account</strong></h1>
+<p>A <strong>person-account</strong> represents a person with a unique phone number interacting with the network through a <strong>principle</strong>.</p>
+<h1><strong>service-account</strong></h1>
+<p>A <strong>service-account</strong> represents a service with a unique id interacting with the network through a <strong>principle</strong>.</p>
+<h1><strong>service</strong></h1>
+<p>A <strong>service</strong> represents a .</p>
 
   </div>
 </div>
@@ -100,7 +240,7 @@
 <a name="servers"></a>
 <div class="center-block p-8">
 
-  <h2 class="mb-4">Servers</h2>
+  <h2 class="mb-4 font-medium">Servers</h2>
 
   
     <div class="shadow bg-grey-lighter mb-3 px-4 py-3">
@@ -167,7 +307,7 @@
 
 
 <a name="operations"></a>
-<h2 class="mb-4 ml-8">Operations</h2>
+<h2 class="mb-4 ml-8 font-medium">Operations</h2>
 
 
   <div class="responsive-container">
@@ -783,7 +923,7 @@ string
     "umph": 0
   },
   "lumens": 0,
-  "sentAt": "2019-09-07T22:01:12Z",
+  "sentAt": "2019-09-08T08:56:43Z",
   "some": "on"
 }</code></pre>
     <h6 class="text-xs text-grey italic">This example has been generated automatically.</h6>
