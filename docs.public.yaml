@@ -427,7 +427,6 @@ components:
           description: The scopes to associate with the new role.
           items:
             type: object
-            description: A scope.
             properties:
               domain:
                 type: string
@@ -435,7 +434,6 @@ components:
                 type: array
                 items:
                   type: string
-                  description: A permission.
               root:
                 type: string
       required:
@@ -453,7 +451,6 @@ components:
           description: The roles this principle can play.
           items:
             type: string
-            description: A role.
 
     domain.challenge.create.payload:
       type: object
@@ -489,7 +486,6 @@ components:
           description: The roles this account's `principle` can play.
           items:
             type: string
-            description: A role.
 
     domain.service-account.create.payload:
       type: object
@@ -499,7 +495,6 @@ components:
           description: The roles this account's `principle` can play.
           items:
             type: string
-            description: A role.
 
     domain.service.create.payload:
       type: object
