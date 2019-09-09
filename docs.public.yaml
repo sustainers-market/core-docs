@@ -59,7 +59,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.principle)
 
     ### | `auth-token`
     An `auth-token` represents a [JWT](https://jwt.io) used as authentication and authorization for operations on a `principle`'s behalf.
@@ -73,7 +73,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.auth-token)
 
     ### | `challenge`
     A `challenge` represents an instance of federated identity authorization by verifying a code sent to a trusted channel (like a phone number).
@@ -88,7 +88,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.challenge)
 
     ### | `person-account`
     A `person-account` represents a person with a unique phone number interacting with the network through a **principle**.
@@ -109,7 +109,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.person-account)
 
     ### | `service-account` 
     A `service-account` represents a `service` interacting with the network through a `principle`.
@@ -126,7 +126,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.service-account)
 
     ### | `service`
     A `service` represents a business on the network.
@@ -141,7 +141,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.service)
 
     ### | `webhook`
     A `webhook` represents an endpoint to publish Events to. For example, a `did-create.service` event will get published as a result of issuing the `create.service` command.
@@ -156,7 +156,7 @@ info:
     ```
 
     #### Commands
-    create, edit
+    [create](#operation-publish-/create.webhook)
 
 servers:
   prod:
@@ -191,6 +191,16 @@ channels:
         - name: role
       message:
         $ref: "#/components/messages/domain.role.create.req"
+  did-create.role:
+    subscribe:
+      operationId: did-create.role.core.sustainers.network
+      summary: did-create
+      description: |
+        Published once a role is created.
+      tags:
+        - name: role
+      message:
+        $ref: "#/components/messages/domain.role.create.event"
 
   /create.principle:
     publish:
@@ -299,6 +309,15 @@ components:
         - $ref: "#/components/messageTraits/command-headers"
       payload:
         $ref: "#/components/schemas/domain.role.create.payload"
+
+    domain.role.create.event:
+      name: /
+      title: A role was created.
+      summary: Do something quite good.
+      description: Seriously, real good.
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/domain.role.did-create.payload"
 
     domain.principle.create.req:
       name: /
@@ -422,6 +441,9 @@ components:
       required:
         - name
         - scopes
+
+    domain.role.did-create.payload:
+      $ref: "#/components/schemas/domain.role.create.payload"
 
     domain.principle.create.payload:
       type: object
