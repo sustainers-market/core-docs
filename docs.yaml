@@ -96,7 +96,7 @@ components:
           issuedDate:
             type: string
             format: date-time
-          sourceCommand:
+          source:
             type: object
             description: If this command was issued by another command, the issuer's info should be described here.
             properties: 

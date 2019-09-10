@@ -521,14 +521,14 @@ components:
       headers:
         type: object
         properties:
-          issuedDate:
+          issued:
             type: string
             format: date-time
             description: The time the command was issued.
           trace:
             type: string
             description: "A value passed from the original command issuer to relate subsequent events."
-          sourceCommand:
+          source:
             type: object
             description: If this command was issued by another command, the issuer's info should be described here.
             properties:
@@ -545,4 +545,4 @@ components:
                 type: string
                 description: The issuing command's service.
         required:
-          - issuedDate
+          - issued
