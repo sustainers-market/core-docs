@@ -1,7 +1,7 @@
 asyncapi: 2.0.0-rc2
 
 info:
-  title: Core | Sustainer's Market Network
+  title: Core | Sustainer's Markets Network
   version: "1.0.0"
   description: |
     * [Overview](#introduction) - what is the Core service and how do you use it?
